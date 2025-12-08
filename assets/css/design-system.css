@@ -312,6 +312,70 @@ body {
   width: 40%;
 }
 
+.ds-empty-state {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.ds-empty-state__media {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.ds-empty-state__media img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+}
+
+.ds-empty-state__body {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.ds-empty-state__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.ds-empty-state__title {
+  margin: 0;
+  font-size: 22px;
+  color: var(--color-strong);
+}
+
+.ds-empty-state__message {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.ds-empty-state .ds-button {
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .ds-empty-state {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ds-empty-state__body {
+    justify-items: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ds-button,
   .ds-card,
