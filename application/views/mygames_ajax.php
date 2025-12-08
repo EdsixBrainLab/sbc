@@ -30,11 +30,12 @@ $scorecolor=array("1"=>"memory","2"=>"VP","3"=>"FA","4"=>"PS","5"=>"linguistics"
 			<?php } ?> 
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="contentbox"> 
-					<?php
-					foreach($GameDetails as $games)
-					{ //echo "<pre>";print_r($games['tot_ques_attend']);exit;
-					?>
+                                        <div class="contentbox">
+                                        <?php if (!empty($GameDetails)): ?>
+                                        <?php
+                                        foreach($GameDetails as $games)
+                                        { //echo "<pre>";print_r($games['tot_ques_attend']);exit;
+                                        ?>
 						<div class="gamesList bounceIn animated">
 							<div class="gameBox <?php echo $bgcolor[$games['Skill_ID']]; ?>">
 								<h3 title="<?php echo $games['Skill_Description']; ?>"><?php echo $games['Skill_Name'];?></h3>
@@ -135,11 +136,24 @@ $scorecolor=array("1"=>"memory","2"=>"VP","3"=>"FA","4"=>"PS","5"=>"linguistics"
 								</div>
 							</div>
 						</div>
-					<?php
-					}
-					?>
-					</div>
-				</div>
-			</div>
-		</div>
+                                        <?php
+                                        }
+                                        ?>
+                                        <?php else: ?>
+                                            <?php $this->load->view('components/empty_state', array(
+                                                'componentId' => 'games-empty-state',
+                                                'eyebrow' => 'Games',
+                                                'title' => 'No games assigned yet',
+                                                'message' => 'When a new contest opens or a coach assigns more challenges, they will appear here.',
+                                                'action' => array(
+                                                    'label' => 'Refresh games',
+                                                    'href' => 'javascript:;',
+                                                    'attributes' => 'class="js-refresh-games" role="button" aria-label="Refresh games"'
+                                                )
+                                            )); ?>
+                                        <?php endif; ?>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
 <!--my games ends here-->

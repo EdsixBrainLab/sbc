@@ -66,6 +66,7 @@ $bordercolor=array("1"=>"#f00","2"=>"#ffc000","3"=>"#92d050","4"=>"#ff6600","5"=
 $(document).ready(function(){
         renderGameSkeletons();
         fancyCall();
+        attachEmptyStateHandlers();
         MyGames();
 });
 
@@ -94,6 +95,14 @@ function verifySkeletonCleared()
         {
                 container.find('.ds-skeleton-grid').remove();
         }
+}
+
+function attachEmptyStateHandlers()
+{
+        $('#ajaxcontent').on('click', '.js-refresh-games', function(event){
+                event.preventDefault();
+                MyGames();
+        });
 }
 
 function MyGames()

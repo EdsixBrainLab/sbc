@@ -1,4 +1,5 @@
 <?php
+    $badges = isset($badges) && is_array($badges) ? $badges : array();
     $perSkill = isset($progressPayload['perSkill']) && is_array($progressPayload['perSkill'])
         ? $progressPayload['perSkill']
         : array();
@@ -10,6 +11,8 @@
     $earnedBadges = array_reduce($badges, static function ($carry, $badge) {
         return $carry + (!empty($badge['earned']) ? 1 : 0);
     }, 0);
+    $hasPerSkill = !empty($perSkill);
+    $hasBadges = !empty($badges);
 ?>
 
 <section class="progress-hero">
@@ -122,34 +125,64 @@
             </div>
         </div>
     </section>
+<?php else: ?>
+    <section class="progress-summary">
+        <div class="container">
+            <?php $this->load->view('components/empty_state', array(
+                'componentId' => 'skill-progress-empty',
+                'eyebrow' => 'Skill focus',
+                'title' => 'No skill progress yet',
+                'message' => 'Play a game to start logging attempts and watch your skill tiles come to life.',
+                'action' => array(
+                    'label' => 'Go to My Games',
+                    'href' => base_url('index.php/home/mygames'),
+                    'attributes' => 'role="button" aria-label="Go to My Games"'
+                )
+            )); ?>
+        </div>
+    </section>
 <?php endif; ?>
 
 <section class="badge-section">
     <div class="container">
-        <div class="badge-grid" role="list">
-            <?php foreach ($badges as $badge): ?>
-                <?php $stateClass = !empty($badge['earned']) ? 'ds-badge-card--earned' : 'ds-badge-card--locked'; ?>
-                <button
-                    class="ds-badge-card <?php echo $stateClass; ?>"
-                    type="button"
-                    role="listitem"
-                    aria-pressed="false"
-                    aria-label="<?php echo htmlspecialchars($badge['title'], ENT_QUOTES, 'UTF-8'); ?> badge: <?php echo !empty($badge['earned']) ? 'Unlocked' : 'Locked'; ?>"
-                    data-tooltip="<?php echo htmlspecialchars($badge['description'], ENT_QUOTES, 'UTF-8'); ?>"
-                >
-                    <div class="ds-badge-card__icon" aria-hidden="true">
-                        <i class="fa <?php echo $badge['icon']; ?>"></i>
-                    </div>
-                    <div class="badge-content">
-                        <p class="ds-badge-card__title"><?php echo htmlspecialchars($badge['title'], ENT_QUOTES, 'UTF-8'); ?></p>
-                        <p class="ds-badge-card__status"><?php echo !empty($badge['earned']) ? 'Unlocked' : 'Locked'; ?></p>
-                    </div>
-                    <?php if (empty($badge['earned'])): ?>
-                        <span class="ds-badge-card__lock" aria-hidden="true"><i class="fa fa-lock"></i></span>
-                    <?php endif; ?>
-                </button>
-            <?php endforeach; ?>
-        </div>
+        <?php if ($hasBadges): ?>
+            <div class="badge-grid" role="list">
+                <?php foreach ($badges as $badge): ?>
+                    <?php $stateClass = !empty($badge['earned']) ? 'ds-badge-card--earned' : 'ds-badge-card--locked'; ?>
+                    <button
+                        class="ds-badge-card <?php echo $stateClass; ?>"
+                        type="button"
+                        role="listitem"
+                        aria-pressed="false"
+                        aria-label="<?php echo htmlspecialchars($badge['title'], ENT_QUOTES, 'UTF-8'); ?> badge: <?php echo !empty($badge['earned']) ? 'Unlocked' : 'Locked'; ?>"
+                        data-tooltip="<?php echo htmlspecialchars($badge['description'], ENT_QUOTES, 'UTF-8'); ?>"
+                    >
+                        <div class="ds-badge-card__icon" aria-hidden="true">
+                            <i class="fa <?php echo $badge['icon']; ?>"></i>
+                        </div>
+                        <div class="badge-content">
+                            <p class="ds-badge-card__title"><?php echo htmlspecialchars($badge['title'], ENT_QUOTES, 'UTF-8'); ?></p>
+                            <p class="ds-badge-card__status"><?php echo !empty($badge['earned']) ? 'Unlocked' : 'Locked'; ?></p>
+                        </div>
+                        <?php if (empty($badge['earned'])): ?>
+                            <span class="ds-badge-card__lock" aria-hidden="true"><i class="fa fa-lock"></i></span>
+                        <?php endif; ?>
+                    </button>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <?php $this->load->view('components/empty_state', array(
+                'componentId' => 'badge-empty-state',
+                'eyebrow' => 'Badges',
+                'title' => 'No badges to show (yet)',
+                'message' => 'Badges will unlock as you build streaks and complete skills. Keep playing to fill this space.',
+                'action' => array(
+                    'label' => 'Play now',
+                    'href' => base_url('index.php/home/mygames'),
+                    'attributes' => 'role="button" aria-label="Play now"'
+                )
+            )); ?>
+        <?php endif; ?>
     </div>
 </section>
 
