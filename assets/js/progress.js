@@ -99,4 +99,68 @@
     if (hasMilestones()) {
         celebrate();
     }
+
+    function setupModals() {
+        var openers = document.querySelectorAll('[data-modal-open]');
+        var closers = document.querySelectorAll('[data-modal-close]');
+        var modals = document.querySelectorAll('.ds-modal');
+        var lastTrigger;
+
+        function openModal(modal, trigger) {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            lastTrigger = trigger || lastTrigger;
+            var focusTarget = modal.querySelector('[data-modal-close]') || modal.querySelector('button, [href], input, select, textarea');
+            if (focusTarget) {
+                focusTarget.focus();
+            }
+        }
+
+        function closeModal(modal) {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            if (lastTrigger && typeof lastTrigger.focus === 'function') {
+                lastTrigger.focus();
+            }
+        }
+
+        openers.forEach(function (opener) {
+            var targetId = opener.getAttribute('data-modal-open');
+            var modal = document.getElementById(targetId);
+            if (!modal) return;
+
+            opener.addEventListener('click', function () {
+                openModal(modal, opener);
+            });
+        });
+
+        closers.forEach(function (closer) {
+            closer.addEventListener('click', function () {
+                var modal = closer.closest('.ds-modal');
+                if (modal) {
+                    closeModal(modal);
+                }
+            });
+        });
+
+        modals.forEach(function (modal) {
+            modal.addEventListener('click', function (event) {
+                if (event.target.hasAttribute('data-modal-close')) {
+                    closeModal(modal);
+                }
+            });
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                modals.forEach(function (modal) {
+                    if (modal.classList.contains('is-open')) {
+                        closeModal(modal);
+                    }
+                });
+            }
+        });
+    }
+
+    setupModals();
 })();

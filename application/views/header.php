@@ -31,6 +31,7 @@ if(window==window.top) {
 <?php if(!isset($this->session->userId))
 {?> 
 <link href="<?php echo base_url(); ?>assets/css/newstyle.css" rel="stylesheet">
+<link href="<?php echo base_url(); ?>assets/css/design-system.css" rel="stylesheet">
 <header id="header">
 	<div class="container">
 	<div style="display:none;" id="iddivLoading" class="loading">Loading&#8230;</div>
