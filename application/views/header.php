@@ -37,31 +37,33 @@ if(window==window.top) {
 	<div class="container">
 	<div style="display:none;" id="iddivLoading" class="loading">Loading&#8230;</div>
 		<div class="col-md-5 col-sm-12 col-xs-12 text-center">
-		  <div class="logo" ><a  title="SkillAngels" href="<?php echo base_url();?>index.php"><img src="<?php echo base_url(); ?>assets/images/skillangels_logo.png" alt="SkillAngels" width="210"/><!--<img src="images/SUPER_BRAIN_OLYMPIAD.png" alt="G-TEC Gensmart Academy" width="100"/>--></a></div>
+                  <div class="logo" ><a  title="SkillAngels" href="<?php echo base_url();?>index.php"><img src="<?php echo base_url(); ?>assets/images/skillangels_logo.png" alt="SkillAngels" width="210" height="72" loading="lazy"/><!--<img src="images/SUPER_BRAIN_OLYMPIAD.png" alt="G-TEC Gensmart Academy" width="100"/>--></a></div>
 		</div>
 		<!--<div class="col-md-3 col-sm-12 col-xs-12 puzzle-model">
 		</div>-->
 		<div class="col-md-7 col-sm-12 col-xs-12 login-btn">
 			<div class="container">
-			<form class="form-horizontal"  role="form" method="post" id="form-login">
-				<div class="form-group" >
-					<ul class="nav navbar-nav">
-						<li class="">
-							<input type="text" class="form-control" name="user_name" id="User_ID" placeholder="Enter User Name">
-						</li>
-						<li class="">          
-						<input type="password" class="form-control" name="User_PWD" id="User_PWD" placeholder="Enter password">
-						</li>
-						<li class="">
-							<input type="button" id="submit" class="form-control loginLink" value="Login">	
-						</li>
+                        <form class="form-horizontal"  role="form" method="post" id="form-login" aria-label="Login form">
+                                <div class="form-group" >
+                                        <ul class="nav navbar-nav">
+                                                <li class="">
+                                                        <label class="sr-only" for="User_ID">User name</label>
+                                                        <input type="text" class="form-control" name="user_name" id="User_ID" placeholder="Enter User Name" autocomplete="username" required aria-required="true" aria-describedby="ErrMsg">
+                                                </li>
+                                                <li class="">
+                                                <label class="sr-only" for="User_PWD">Password</label>
+                                                <input type="password" class="form-control" name="User_PWD" id="User_PWD" placeholder="Enter password" autocomplete="current-password" required aria-required="true" aria-describedby="ErrMsg">
+                                                </li>
+                                                <li class="">
+                                                        <input type="button" id="submit" class="form-control loginLink" value="Login" aria-label="Submit login form">
+                                                </li>
 						
 							<!--<input type="button" id="" class="form-control loginLink" value="Register">-->
 						<!-- <a href="<?php echo base_url(); ?>index.php/home/registration" id="" class="btn btn-success loginLink">Register</a>  -->
 						
 						
 					</ul>
-                                        <div id="ErrMsg" class="col-lg-12 col-sm-12" style="color: #fbe336;font-weight: bolder;font-size: 14px;clear: both;" role="alert" aria-live="assertive">  <?php if(isset($ErrMsg)){echo $ErrMsg;}?></div>
+                                        <div id="ErrMsg" class="col-lg-12 col-sm-12" style="color: #cc0000;font-weight: 700;font-size: 14px;clear: both;" role="alert" aria-live="assertive">  <?php if(isset($ErrMsg)){echo $ErrMsg;}?></div>
 				</div>
 
 				</form>
@@ -75,7 +77,7 @@ if(window==window.top) {
 <header id="header">
 	<div class="container">
 		<div class="col-md-3 col-sm-12 col-xs-12 text-center">
-		  <div class="logo" ><a  title="SkillAngels" href="javascript:;"><img src="<?php echo base_url(); ?>assets/images/skillangels_logo.png" alt="SkillAngels" width="210"/><!--<img src="images/SUPER_BRAIN_OLYMPIAD.png" alt="G-TEC Gensmart Academy" width="100"/>--></a></div>
+                  <div class="logo" ><a  title="SkillAngels" href="javascript:;"><img src="<?php echo base_url(); ?>assets/images/skillangels_logo.png" alt="SkillAngels" width="210" height="72" loading="lazy"/><!--<img src="images/SUPER_BRAIN_OLYMPIAD.png" alt="G-TEC Gensmart Academy" width="100"/>--></a></div>
 		</div>
 		<div class="col-md-6 col-sm-6 col-xs-12 padtop" >
 			<h3>Welcome <span style="color:#ff5c5d"><?php echo $this->session->name; ?></span></h3>
@@ -96,6 +98,33 @@ if(window==window.top) {
 <style>
 .padtop{text-align:center;padding:20px 0px 0px 40px;}
 .topHead{color: #fff;font-size: 25px;}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.login-btn .form-control {
+  min-height: 44px;
+  padding: 10px 14px;
+}
+
+.login-btn .nav > li {
+  padding-right: 8px;
+}
+
+.loginLink:focus-visible,
+.form-control:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+}
 
 .loading {
   position: fixed;

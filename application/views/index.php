@@ -5,10 +5,11 @@ date_default_timezone_set('Asia/Kolkata');
 //if(isset($_SESSION['userId'])){header("Location:profile.php");exit;}
 ?>
 
+<main id="main-content">
 <section class="landing-wrapper">
     <div class="container">
         <div class="landing-grid">
-            <div class="hero-card">
+            <div class="hero-card" role="banner">
                 <div class="hero-avatar" aria-hidden="true">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
@@ -17,8 +18,8 @@ date_default_timezone_set('Asia/Kolkata');
                     <h1 class="student-name">Super Student</h1>
                     <p class="student-status">Ready to pick up where you left off? Jump back into the challenge and level up.</p>
                     <div class="hero-actions">
-                        <a href="#" class="btn-play" aria-label="Play current challenge">Play</a>
-                        <a href="#whats-new" class="btn-secondary" aria-label="Skip to what's new section">What's new</a>
+                        <a href="#" class="btn-play" aria-label="Play current challenge">Resume current challenge</a>
+                        <a href="#whats-new" class="btn-secondary" aria-label="Skip to what's new section">See what's new</a>
                     </div>
                 </div>
             </div>
@@ -52,12 +53,12 @@ date_default_timezone_set('Asia/Kolkata');
     </div>
 </section>
 
-<section id="whats-new" class="whats-new-section">
+<section id="whats-new" class="whats-new-section" aria-labelledby="whats-new-heading">
     <div class="container">
         <div class="section-header">
             <div>
                 <p class="eyebrow">Stay updated</p>
-                <h3>What's New</h3>
+                <h2 id="whats-new-heading">What's New</h2>
             </div>
             <div class="whats-new-actions">
                 <button class="scroll-btn" data-direction="prev" type="button" aria-label="Show previous update" title="Previous update"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
@@ -95,6 +96,7 @@ date_default_timezone_set('Asia/Kolkata');
         </div>
     </div>
 </section>
+</main>
 
 <style>
     .landing-wrapper {
@@ -107,13 +109,17 @@ date_default_timezone_set('Asia/Kolkata');
         gap: 24px;
     }
 
+    .landing-wrapper .container {
+        max-width: 1200px;
+    }
+
     .hero-card {
         display: grid;
         grid-template-columns: auto 1fr;
         gap: 18px;
         padding: 28px;
-        background: linear-gradient(135deg, #1a73e8, #6f9fff);
-        color: #fff;
+        background: linear-gradient(135deg, #1a73e8, #2c528b);
+        color: #f5f7ff;
         border-radius: 20px;
         box-shadow: 0 18px 60px rgba(26, 115, 232, 0.25);
         align-items: center;
@@ -167,13 +173,15 @@ date_default_timezone_set('Asia/Kolkata');
 
     .hero-actions a {
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 15px;
         border-radius: 999px;
         padding: 12px 22px;
+        min-height: 44px;
+        letter-spacing: 0.2px;
         transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         outline: 3px solid transparent;
-        outline-offset: 2px;
+        outline-offset: 3px;
     }
 
     .btn-play {
@@ -183,9 +191,9 @@ date_default_timezone_set('Asia/Kolkata');
     }
 
     .btn-secondary {
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.16);
+        color: #f5f7ff;
+        border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
     .hero-actions a:hover,
@@ -194,7 +202,7 @@ date_default_timezone_set('Asia/Kolkata');
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
         background: #ffffff;
         color: #1a73e8;
-        outline-color: rgba(255, 255, 255, 0.6);
+        outline-color: rgba(255, 255, 255, 0.8);
     }
 
     .feature-grid {
@@ -210,22 +218,24 @@ date_default_timezone_set('Asia/Kolkata');
         padding: 18px;
         border-radius: 16px;
         text-decoration: none;
-        color: #fff;
+        color: #0b2345;
         box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         outline: 3px solid transparent;
         outline-offset: 4px;
+        min-height: 140px;
     }
 
     .feature-card .feature-icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.15);
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.9);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
+        font-size: 22px;
+        color: #0b2345;
     }
 
     .feature-card .eyebrow {
@@ -245,7 +255,7 @@ date_default_timezone_set('Asia/Kolkata');
 
     .feature-card p {
         margin: 0;
-        color: rgba(255, 255, 255, 0.92);
+        color: #0b2345;
         line-height: 1.5;
         font-size: 14px;
     }
@@ -254,12 +264,12 @@ date_default_timezone_set('Asia/Kolkata');
     .feature-card:focus-visible {
         transform: translateY(-4px);
         box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
-        outline-color: rgba(255, 255, 255, 0.7);
+        outline-color: rgba(11, 35, 69, 0.35);
     }
 
-    .feature-card.challenge { background: linear-gradient(135deg, #ff6b6b, #ff9472); }
-    .feature-card.practice { background: linear-gradient(135deg, #5c7cfa, #69dbff); }
-    .feature-card.rewards { background: linear-gradient(135deg, #4caf50, #a2e35d); }
+    .feature-card.challenge { background: linear-gradient(135deg, #ffe2dd, #ffc7b5); }
+    .feature-card.practice { background: linear-gradient(135deg, #d7e6ff, #c8f3ff); }
+    .feature-card.rewards { background: linear-gradient(135deg, #def0df, #c5eac5); }
 
     .whats-new-section {
         padding: 40px 0 60px;
@@ -273,7 +283,7 @@ date_default_timezone_set('Asia/Kolkata');
         margin-bottom: 16px;
     }
 
-    .section-header h3 {
+    .section-header h2 {
         margin: 2px 0 0;
         font-size: 24px;
         font-weight: 700;
@@ -294,8 +304,8 @@ date_default_timezone_set('Asia/Kolkata');
     }
 
     .scroll-btn {
-        width: 36px;
-        height: 36px;
+        min-width: 44px;
+        min-height: 44px;
         border: 1px solid #dce3f1;
         background: #fff;
         border-radius: 10px;
@@ -304,6 +314,7 @@ date_default_timezone_set('Asia/Kolkata');
         transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         outline: 3px solid transparent;
         outline-offset: 2px;
+        padding: 6px;
     }
 
     .scroll-btn:hover,
@@ -346,7 +357,7 @@ date_default_timezone_set('Asia/Kolkata');
         border-radius: 14px;
         padding: 16px;
         box-shadow: 0 12px 30px rgba(28, 43, 74, 0.06);
-        min-height: 160px;
+        min-height: 170px;
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -395,6 +406,18 @@ date_default_timezone_set('Asia/Kolkata');
         box-shadow: 0 16px 38px rgba(28, 43, 74, 0.14);
     }
 
+    @media (min-width: 960px) {
+        .landing-grid {
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            align-items: stretch;
+        }
+
+        .hero-card,
+        .feature-grid {
+            height: 100%;
+        }
+    }
+
     @media (max-width: 900px) {
         .hero-card {
             grid-template-columns: 1fr;
@@ -430,6 +453,33 @@ date_default_timezone_set('Asia/Kolkata');
         }
         .whats-new-actions {
             align-self: flex-end;
+        }
+
+        .carousel-track {
+            grid-auto-columns: minmax(240px, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-actions {
+            width: 100%;
+        }
+
+        .hero-actions a {
+            flex: 1 1 100%;
+            text-align: center;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            transition: none !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+        }
+
+        .carousel-track {
+            scroll-behavior: auto;
         }
     }
 
