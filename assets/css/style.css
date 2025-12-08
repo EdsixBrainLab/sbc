@@ -1,0 +1,888 @@
+@font-face {
+    font-family: 'Phenomena-Regular';
+    src: url('../fonts/Phenomena-Regular.eot');
+    src: local('☺'), url('../fonts/Phenomena-Regular.woff') format('woff'), url('../fonts/Phenomena-Regular.ttf') format('truetype'), url('../fonts/Phenomena-Regular.svg') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Phenomena-ExtraBold';
+    src: url('../fonts/Phenomena-ExtraBold.eot');
+    src: local('☺'), url('../fonts/Phenomena-ExtraBold.woff') format('woff'), url('../fonts/Phenomena-ExtraBold.ttf') format('truetype'), url('../fonts/Phenomena-ExtraBold.svg') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+.loginLink{border: 1px solid #1f7096;padding:7px 22px !important;color:#000 !important;border-radius: 5px;background: #fbe336;font-family: 'Phenomena-Regular';text-align:center;font-size:20px !important;}
+
+.menuLink{border: 1px solid #1f7096;padding:7px 12px !important;color:#000 !important;border-radius: 5px;background: #fbe336;font-family: 'Phenomena-Regular';text-align:center;font-size:20px !important;}
+
+h1, h2 { font-family: 'Phenomena-ExtraBold' }
+body { font-family: 'Phenomena-Regular';font-size:16px; }
+.rightSideButton .btn-primary { }
+.navbar-default {background:#1f7096;text-align:center;}
+.navbar-static-top { border-bottom: 1px solid #9ed1cb; }
+.sidebarProfile .fa { margin-left: 0 !important; }
+.rightSideButton { margin-top: 8px; margin-right: 20px; }
+.sidebarProfile { text-align: center; padding: 90px 0 30px 0; position: relative; }
+.sidebarProfile .editBtn { position: absolute; top: 90px; right: 17px; }
+.sidebarProfile h2 { padding: 5px 10px 0 10px; margin: 0; color: #fff; word-wrap: break-word; }.gamesList img
+.sidebarProfile img { border: 5px solid #bce1de; }
+/* #side-menu { background: #18dac4; padding-bottom: 30px; } */
+#side-menu .btn-circle { width: 26px; height: 26px; padding: 4px 0 4px 0; border-radius: 15px; text-align: center; border: 1px solid #7fbfb8; color: #7fbfb8; font-size: 12px; line-height: 1.428571429; }
+#side-menu .btn-circle:hover { background: #9ccfca; color: #fff; }
+.nav>li>a { text-align: right; font-size: 18px; color: #fff; }
+#side-menu .fa { margin-left: 7px;font-size:17px }
+.side-skill { background-color:#f8f8f9; padding: 0; text-align: right; }
+.side-skill li {  padding: 10px 10px 10px 5px; font-size: 15px; color: #062c65; }
+.side-skill li:last-child { border-bottom: none; padding-bottom: 20px; }
+.side-skill li:first-child { padding-top: 20px; }
+.side-skill li .performanceMemory { }
+.playGames h2 { font-size: 27px; font-weight: normal; margin-bottom: 0; border-bottom: 1px solid #eaeaea; padding: 10px 20px; }
+.gameBox { padding: 0 0 40px 0; color: #fff; font-weight: bold; font-size: 17px; }
+.gameBox h3 { color: #fff !important; margin: 0 0 20px 0 !important; padding: 15px 0 !important; font-size: 18px !important; font-weight: normal !important; }
+.gameBox h4 {  text-transform: uppercase; font-size: 16px; }
+.MemoryGame h3 { background: #da0404; }
+.VisualProcessingGame h3 { background: #ffa800; }
+.FocusGame h3 { background: #79c236; }
+.ProblemSolvingGame h3 { background: #e95d00; }
+.LinguisticsGame h3 { background: #0098ea; }
+.gamesList { width: 19%; margin: 0 1% 0 0; float: left; text-align: center; }
+.MemoryGame { background: #ff0000; }
+.VisualProcessingGame { background: #ffc000; }
+.FocusGame { background: #92d050; }
+.ProblemSolvingGame { background: #ff6600; }
+.LinguisticsGame { background: #00b0f0; }
+.gamesList h3 { font-size: 17px; font-weight: bold; color: #000; margin: 0; padding: 0 0 15px 0; }
+.gamesList .viewMoreBtn { background: #fff none repeat scroll 0 0; color: #666; font-size: 16px; padding: 7px 20px; text-transform: uppercase; transition: background 0s ease 0s, color 0.25s ease-in-out 0s; text-decoration: none;    border-radius: 5px; }
+.gamesList .MemoryGame .viewMoreBtn:hover { background: #c90000; color: #097bf5; }
+.gamesList .VisualProcessingGame .viewMoreBtn:hover { background: #ff7900; color: #097bf5; }
+.gamesList .FocusGame .viewMoreBtn:hover { background: #60b221; color: #097bf5; }
+.gamesList .ProblemSolvingGame .viewMoreBtn:hover { background: #ff2600; color: #097bf5; }
+.gamesList .LinguisticsGame .viewMoreBtn:hover { background: #0082e4; color: #097bf5; }
+.gamesList h4 { margin-bottom: 10px; }
+.gamesList img { }
+.score-head {  margin-bottom: 0 !important; padding: 0; font-size: 21px; }
+.gamePercentageMemory, .gamePercentageVP, .gamePercentageFG, .gamePercentagePS, .gamePercentageL { text-align: center; padding: 10px 0 0px 0 }
+.gamesInner { padding: 0; background: #fff; border-top: 1px solid #eaeaea; border-left: 1px solid #eaeaea; border-right: 2px solid #eaeaea; border-bottom: 2px solid #eaeaea; margin-bottom: 20px; }
+.playGames .contentbox { background: #fff; padding: 20px; overflow: hidden; }
+.brainPower { width: 49%; float: left; }
+.skills { width: 49%; float: right; }
+.gameRating { width: 67%; float: left; }
+.gameRating li { font-size: 17px; list-style: none; height: 52px; line-height: 52px; padding: 0 20px; }
+.gameRating li:nth-child(odd) { background: #f7f7f7; }
+.starsCount { background: url(../images/star.png) no-repeat center; color: #9A0404; text-shadow: 1px 1px 1px #fff; float: right; display: inline-block; vertical-align: middle; margin-top: 10%; margin-right: 4%; height: 154px; width: 147px; font-size: 40px;  line-height: 174px; text-align: center; }
+.starRatingContainer { text-align: center; }
+.skillHead { width: 32%; float: left; }
+.gameRating p { width: 50%; float: left; text-align: left; }
+.ratingStars { float: right; width: 50%; }
+.memortStar, .VPStar, .FAStar, .PSStar, .linguisticsStar, .emptyStar { background: url(../images/ratingStar.png) no-repeat; display: block; width: 26px; height: 25px; margin-top: 13px; float: left; margin-right: 5px; }
+.memortStar { background-position: 0 0; }
+.VPStar { background-position: -26px 0; }
+.FAStar { background-position: -52px 0; }
+.PSStar { background-position: -78px 0; }
+.linguisticsStar { background-position: -104px 0; }
+.emptyStar { background-position: -130px 0; }
+.gamePercentageMemory, .gamePercentageVP, .gamePercentageFG, .gamePercentagePS, .gamePercentageL { background: url(../images/LoaderBg.png) no-repeat center; width: 100%; height: 188px; }
+.gamePercentageMemory span, .gamePercentageVP span, .gamePercentageFG span, .gamePercentagePS span, .gamePercentageL span { line-height: 140px; color: #fff; font-size: 20px; letter-spacing: -2px; }
+.memory10, .memory20, .memory30, .memory40, .memory50, .memory60, .memory70, .memory80, .memory90, .memory100 { background: url(../images/MemoryCounter.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.VP10, .VP20, .VP30, .VP40, .VP50, .VP60, .VP70, .VP80, .VP90, .VP100 { background: url(../images/Visual_Processing_Counter.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.FA10, .FA20, .FA30, .FA40, .FA50, .FA60, .FA70, .FA80, .FA90, .FA100 { background: url(../images/Focus_Attention_Counter.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.PS10, .PS20, .PS30, .PS40, .PS50, .PS60, .PS70, .PS80, .PS90, .PS100 { background: url(../images/Problem_Solving_Counter.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.linguistics10, .linguistics20, .linguistics30, .linguistics40, .linguistics50, .linguistics60, .linguistics70, .linguistics80, .linguistics90, .linguistics100 { background: url(../images/Linguistics_Counter.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.memory10, .VP10, .FA10, .PS10, .linguistics10 { background-position: 0 0; }
+.memory20, .VP20, .FA20, .PS20, .linguistics20 { background-position: 0 -140px; }
+.memory30, .VP30, .FA30, .PS30, .linguistics30 { background-position: 0 -280px; }
+.memory40, .VP40, .FA40, .PS40, .linguistics40 { background-position: 0 -420px; }
+.memory50, .VP50, .FA50, .PS50, .linguistics50 { background-position: 0 -560px; }
+.memory60, .VP60, .FA60, .PS60, .linguistics60 { background-position: 0 -700px; }
+.memory70, .VP70, .FA70, .PS70, .linguistics70 { background-position: 0 -840px; }
+.memory80, .VP80, .FA80, .PS80, .linguistics80 { background-position: 0 -980px; }
+.memory90, .VP90, .FA90, .PS90, .linguistics90 { background-position: 0 -1120px; }
+.memory100, .VP100, .FA100, .PS100, .linguistics100 { background-position: 0 -1260px; }
+.earnedStars { margin: 0 auto; overflow: hidden; padding-top: 17px; width: 154px; }
+.memoryStar, .VPStar1, .FAStar1, .PSStar1, .linguisticsStar1, .NoStar { background: url(../images/earnedStar.png) no-repeat; width: 26px; height: 25px; display: block; float: left; margin-right: 4px; margin-bottom: 5px; }
+.memoryStar { background-position: 0 0; }
+.VPStar1 { background-position: -27px 0; }
+.FAStar1 { background-position: -54px 0; }
+.PSStar1 { background-position: -81px 0; }
+.linguisticsStar1 { background-position: -108px 0; }
+.NoStar { background-position: -135px 0; }
+.navbar-brand1 { float: left; height: 50px; padding: 0 0; font-size: 18px; line-height: 20px; position: relative; z-index: 99; }
+/* .navbar-brand1 img { margin-left: 100px; } */
+.topHead {  font-size: 25px; color: #fff; margin-left: 11px; margin-top: 7px; display: inline-block; font-weight: bold;}
+.skillPerformanceContainer { margin: 30px -30px 0 -30px; padding: 30px; }
+.skillPerformanceContainer .row { }
+.skillPerformanceContainer h3 { font-size: 20px; color: #000; margin: 0 0 20px 0; padding: 0; }
+/*BEGIN PERFORMANCE BOX*/
+.performanceBox { text-align: center; }
+ul { margin: 0; padding: 0; list-style: none; }
+.performanceBox ul li { float: left; list-style: none;  font-size: 13px; color: #000;  margin-bottom: 8px; margin-right: 8px; }
+.performanceBox img { margin-bottom: 20px; }
+.performanceMemory, .performanceVP, .performanceFA, .performancePS, .performanceLinguistics { width: 18px; height: 18px; display: block; float: right; border-radius: 5px; margin-left: 7px; margin-top: 1px; }
+.performanceMemory { background: #e81919; }
+.performanceVP { background: #ffa300; }
+.performanceFA { background: #8bcc46; }
+.performancePS { background: #f16202; }
+.performanceLinguistics { background: #0ab7f6; }
+.starsWonBg { background: url(../images/starsWon.png) no-repeat; width: 181px; height: 164px; margin: 50px auto 0 auto; line-height: 164px;font-size: 49px; letter-spacing: -3px; font-weight: bold; }
+.gamePerformanceChat li {  font-size: 13px; color: #000; height: 15px; clear: both; margin-bottom: 10px; }
+.gamePerformanceChat { margin-bottom: 20px; }
+.gamePerformanceChat .gamePerformanceHead { float: left; margin-right: 10px; width: 15px; }
+.gamePerformanceChat .gamePerformanceInner { border: 1px solid #e7e7e7; background: #e4e4e4; float: left; width: 220px; border-radius: 30px; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlN2U3ZTciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(231,231,231,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(231,231,231,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(231,231,231,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(231,231,231,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(231,231,231,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(231,231,231,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e7', GradientType=0 ); /* IE6-8 */
+}
+.gamePerformanceChat .gamePerformanceInner span { width: 10%; display: block; float: left; text-align: center; font-size: 11px; color: #5b5b5b;  height: 15px; }
+.gamePerformanceChat .gamePerformanceInner span +span { border-left: 1px solid #dbdbdb; border-right: 1px solid #fff; }
+.gamePerformanceChat .gamePerformanceInner span:last-child { border-right: 0 !important; }
+.gamePerformanceInner span:first-child { border-radius: 50px 0 0 50px; }
+.gamePerformanceInner span:last-child { border-radius: 0 50px 50px 0; }
+.gamePerformanceChat .memoryColor { border-right: 1px solid #d53030 !important; border-left: 1px solid #ff3030 !important; background: rgb(255,65,65); background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNDE0MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiMDAzMDMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgba(255,65,65,1) 0%, rgba(176,3,3,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,65,65,1)), color-stop(100%, rgba(176,3,3,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(255,65,65,1) 0%, rgba(176,3,3,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(255,65,65,1) 0%, rgba(176,3,3,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(255,65,65,1) 0%, rgba(176,3,3,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(255,65,65,1) 0%, rgba(176,3,3,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4141', endColorstr='#b00303', GradientType=0 ); /* IE6-8 */
+}
+.gamePerformanceChat .VPColor { border-right: 1px solid #dc9f00 !important; border-left: 1px solid #ffe700 !important; background: rgb(255,192,0); /* Old browsers */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmYzAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMzc4MDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgba(255,192,0,1) 0%, rgba(227,120,0,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,192,0,1)), color-stop(100%, rgba(227,120,0,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(255,192,0,1) 0%, rgba(227,120,0,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(255,192,0,1) 0%, rgba(227,120,0,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(255,192,0,1) 0%, rgba(227,120,0,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(255,192,0,1) 0%, rgba(227,120,0,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc000', endColorstr='#e37800', GradientType=0 ); /* IE6-8 */
+}
+.gamePerformanceChat .FAColor { border-right: 1px solid #4b9c23 !important; border-left: 1px solid #83c93a !important; background: rgb(156,219,89); /* Old browsers */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzljZGI1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1NjkyMTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgba(156,219,89,1) 0%, rgba(86,146,21,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(156,219,89,1)), color-stop(100%, rgba(86,146,21,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(156,219,89,1) 0%, rgba(86,146,21,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(156,219,89,1) 0%, rgba(86,146,21,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(156,219,89,1) 0%, rgba(86,146,21,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(156,219,89,1) 0%, rgba(86,146,21,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9cdb59', endColorstr='#569215', GradientType=0 ); /* IE6-8 */
+}
+.gamePerformanceChat .PSColor { border-right: 1px solid #cb5100 !important; border-left: 1px solid #ff7a00 !important; background: rgb(255,102,0); /* Old browsers */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNjYwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjYzUyMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgba(255,102,0,1) 0%, rgba(204,82,0,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,102,0,1)), color-stop(100%, rgba(204,82,0,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(255,102,0,1) 0%, rgba(204,82,0,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(255,102,0,1) 0%, rgba(204,82,0,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(255,102,0,1) 0%, rgba(204,82,0,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(255,102,0,1) 0%, rgba(204,82,0,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6600', endColorstr='#cc5200', GradientType=0 ); /* IE6-8 */
+}
+.gamePerformanceChat .LIColor { background: rgb(26,194,255); /* Old browsers */ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFhYzJmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMTkwYzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgba(26,194,255,1) 0%, rgba(1,144,195,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(26,194,255,1)), color-stop(100%, rgba(1,144,195,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(26,194,255,1) 0%, rgba(1,144,195,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(26,194,255,1) 0%, rgba(1,144,195,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(26,194,255,1) 0%, rgba(1,144,195,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(26,194,255,1) 0%, rgba(1,144,195,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ac2ff', endColorstr='#0190c3', GradientType=0 ); /* IE6-8 */
+}
+/* bigger size game performance*/
+
+
+.big .gamePerformanceChat li {  font-size: 13px; color: #000; height: 15px; clear: both; margin-bottom: 15px; }
+.big .gamePerformanceChat { margin-bottom: 5px; display: inline-block; }
+.big .gamePerformanceChat .gamePerformanceHead { float: left; margin-right: 10px; width: 20px; }
+.big .gamePerformanceChat .gamePerformanceInner { border: 1px solid #e7e7e7; background: #e4e4e4; float: left; width: 400px; ); /* IE6-8 */
+}
+.big .gamePerformanceChat .gamePerformanceInner span { width: 10%; padding-top: 2px; height: 20px; display: block; float: left; text-align: center; font-size: 11px; }
+.big .gamePerformanceChat .gamePerformanceInner span +span { border-left: 1px solid #dbdbdb; }
+.big .gamePerformanceChat .gamePerformanceInner span:last-child { border-right: 0 !important; }
+.big .gamePerformanceInner span:first-child { border-radius: 50px 0 0 50px; }
+.big .gamePerformanceInner span:last-child { border-radius: 0 50px 50px 0; }
+.big .gamePerformanceStatus { display: inline-block; }
+.big .gamePerformanceStatus li { clear: none; display: inline-block; margin-left: 15px; }
+.star.boxBorder { min-height: 253px; }
+/* end of bigger size game performance */
+
+.cb { clear: both; }
+.superBrainContainer h3, .playStatusContainer h3 { margin-bottom: 10px; }
+.superBrainContainer { margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #e2e2e2 }
+.boxBorder { border-left: 1px solid #e2e2e2; min-height: 308px; }
+.gamePerformanceStatus {  font-size: 12px; }
+.gamePerformanceStatus .Correct, .gamePerformanceStatus .Unattended, .gamePerformanceStatus .InCorrect { width: 18px; height: 18px; display: block; float: left; margin-right: 5px; border-radius: 5px; }
+.gamePerformanceStatus li { clear: both; margin-bottom: 5px; }
+.gamePerformanceStatus .Correct { background: #959595; }
+.gamePerformanceStatus .Unattended { border: 2px solid #959595 }
+.gamePerformanceStatus .InCorrect { border: 2px solid #959595; line-height: 12px; text-align: center; background: url(../images/incorrect.png) center center no-repeat; }
+.superBrainContainer ul li { float: left; }
+.superBrainContainer { font-size: 14px; color: #000; clear: both; line-height: 23px; }
+.superBrainContainer p {  }
+.superBrainContainer p span { width: inherit; display: inline-block; }
+.roundClock { font-size: 55px !important; color: #555555; float: left; margin-right: 10px; }
+.playStatusContainer .btn-circle { width: 47px; border: 6px solid #555; height: 47px; padding: 6px 0; border-radius: 50%; text-align: center; font-size: 12px; line-height: 1.428571429; float: left; margin-right: 10px; }
+.playStatusContainer .fa-info { font-size: 24px; color: #555; }
+.playStatusContainer ul li { float: left; width: 24px; text-align: center; margin-right: 8px; }
+.playStatusContainer .MColor, .playStatusContainer .VPColor, .playStatusContainer .FAColor, .playStatusContainer .PSColor, .playStatusContainer .LIColor { width: 24px; height: 24px; display: block; border-radius: 50%; }
+.playStatusContainer .MColor-border, .playStatusContainer .VPColor-border, .playStatusContainer .FAColor-border, .playStatusContainer .PSColor-border, .playStatusContainer .LIColor-border { width: 24px; height: 24px; display: block; border-radius: 50%; }
+.playStatusContainer .MColor { background: #ff0000; }
+.playStatusContainer .VPColor { background: #ffc000; }
+.playStatusContainer .FAColor { background: #92d050; }
+.playStatusContainer .PSColor { background: #ff6600; }
+.playStatusContainer .LIColor { background: #00b0f0; }
+.playStatusContainer .MColor-border { border: 1px solid #ff0000; }
+.playStatusContainer .VPColor-border { border: 1px solid #ffc000; }
+.playStatusContainer .FAColor-border { border: 1px solid #92d050; }
+.playStatusContainer .PSColor-border { border: 1px solid #ff6600; }
+.playStatusContainer .LIColor-border { border: 1px solid #00b0f0; }
+.playStatusContainer { overflow: hidden; }
+.boxBorder { overflow: hidden; }
+.superBrainWrapper { overflow: visible; }
+/*END PERFORMANCE BOX*/
+@media only screen and (min-width:1101px) and (max-width:1400px) {
+.gamePerformanceChat .gamePerformanceInner { width: 200px; }
+/*	.sidebar { width:150px; }*/
+.sidebarProfile { padding: 30px 0 30px 0; }
+.sidebarProfile .editBtn { position: absolute; top: 28px; right: 15px; }
+/* .gameBox h3 { font-size: 15px !important; } */
+.gameBox h4 { font-size: 16px; }
+.boxBorder { overflow: hidden; margin-bottom: 20px; min-height: 265px; }
+.footer .col-lg-6 { float: left; }
+.footer .footerLinks { float: right; }
+}
+ @media only screen and (min-width:768px) and (max-width:820px) {
+.gameStatusContainer p { float: left; font-size: 12px !important; }
+}
+ @media only screen and (min-width:1101px) and (max-width:1199px) {
+.superBrainWrapper .playStatusContainer { margin-bottom: 30px; padding-bottom: 39px; border-bottom: 1px solid #e2e2e2; }
+.performanceBoxContainer { width: 100%; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e2e2; text-align: center; }
+.starsWonBg { margin-top: 25px; }
+}
+@media only screen and (min-width:1101px) and (max-width:1271px) {
+.gamePerformanceChat .gamePerformanceInner { width: 180px; }
+}
+ @media only screen and (min-width:600px) and (max-width:991px) {
+.superBrainWrapper1 { width: 50%; float: left; }
+.superBrainWrapper1.superBrainContainer, .superBrainWrapper1.playStatusContainer { width: 100% !important; float: left; }
+.superBrainWrapper1 { border-bottom: none !important; margin-bottom: 0 !important; }
+.superBrainWrapper1 .superBrainContainer { margin-bottom: 20px !important; padding-bottom: 15px; border-bottom: 1px solid #E2E2E2; }
+}
+ @media only screen and (max-width: 800px) and (min-width: 768px) {
+.superBrainContainer p { font-size: 13px; }
+}
+ @media only screen and (min-width:768px) and (max-width:1199px) {
+.superBrainWrapper .superBrainContainer, .superBrainWrapper .playStatusContainer { width: 50%; float: left; }
+.superBrainWrapper1 .superBrainContainer, .superBrainWrapper1 .playStatusContainer { width: 100%; float: left; }
+}
+@media only screen and (min-width:992px) and (max-width:1199px) {
+.superBrainWrapper1 .superBrainContainer, .superBrainWrapper1 .playStatusContainer { width: 100%; float: left; }
+.superBrainWrapper1 .playStatusContainer { border-bottom: none !important; }
+.superBrainWrapper1 .superBrainWrapper { border-bottom: none !important; }
+.superBrainWrapper1 .superBrainContainer { margin-bottom: 20px !important; padding-bottom: 15px; border-bottom: 1px solid #E2E2E2; }
+}
+@media only screen and (min-width:768px) and (max-width:1100px) {
+.navbar-brand1 img { margin-left: 10px !important; }
+#page-wrapper { margin: 0 0 0 200px !important; }
+.sidebar { width: 200px !important; }
+.sidebarProfile { padding: 33px 0 30px 0; }
+.sidebarProfile .editBtn { top: 18px; right: 30px; }
+.gamesList { width: 32%; margin-bottom: 2%; }
+.gameBox h3 { padding: 15px 0 !important; font-size: 14px !important; }
+.superBrainContainer { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.boxBorder { float: left; width: 50%; min-height: inherit }
+.superBrainWrapper { border-bottom: 1px solid #E2E2E2; padding-bottom: 14px; margin-bottom: 20px; }
+.gamePerformanceChat .gamePerformanceHead { float: left; margin-right: 2px; width: 15px; }
+.performanceBoxContainer { width: 100%; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e2e2; border-left: 0; text-align: center }
+.starsWonBg { margin: 10px auto 0 auto; }
+.footer .col-lg-6 { float: left; }
+.footer .footerLinks { float: right; }
+}
+@media only screen and (min-width:600px) and (max-width:767px) {
+.gamesList { width: 32.1%; margin: 0 1% 4% 0; float: left; text-align: center; }
+.navbar-brand1 img { margin-left: 10px !important; }
+.topHead { float: right; margin-right: 20px; margin-top: 0; width: 100%; text-align: right; }
+.rightSideButton { margin-top: 3px; margin-right: 20px; float: right; margin-bottom: 12px; }
+.superBrainWrapper { overflow: hidden; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #e2e2e2; }
+.superBrainWrapper1 { overflow: hidden; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #e2e2e2; }
+.superBrainWrapper .superBrainContainer, .superBrainWrapper .playStatusContainer { width: 50%; float: left; }
+.superBrainWrapper1 .superBrainContainer, .superBrainWrapper1 .playStatusContainer { width: 100%; float: left; }
+.superBrainContainer { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.boxBorder { float: left; width: 50%; min-height: inherit }
+.starsWonBg { margin: 10px auto 0 auto; }
+.performanceBoxContainer { width: 100%; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e2e2; text-align: center }
+.footer { text-align: center; }
+.footer .footerLinks { margin-top: 10px; }
+.footer .footerLinks ul li { float: inherit; display: inline-block; }
+.footer .footerLinks ul { float: inherit !important; }
+.navbar-default { clear: both; }
+.sidebarProfile { padding: 15px 0 30px 0; }
+}
+@media only screen and (min-width:480px) and (max-width:599px) {
+.navbar-brand1 img { margin-left: 10px; }
+.topHead { font-size: 19px; margin-top: 0; float: right; margin-right: 20px; }
+.rightSideButton { margin-top: 10px; text-align: center; margin-bottom: 10px; float: right; clear: both; }
+.sidebarProfile { padding: 15px 0 15px 0; }
+.gamesList { width: 100%; margin: 0 0 24px 0; padding-bottom: 20px; border-bottom: 1px solid #D4D4D4; }
+.boxBorder { border-left: 0; min-height: inherit; clear: both; border-top: 1px solid #e2e2e2; padding: 20px 0 0 0; margin: 20px 15px 0 15px; }
+.starsWonBg { margin: 20px auto 0 auto; }
+.superBrainContainer { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e2e2; }
+.rightSideButton .btn-primary {  font-size: 12px; }
+.footer { text-align: center; }
+.footer .footerLinks { margin-top: 10px; }
+.footer .footerLinks ul li { float: inherit; display: inline-block; }
+.footer .footerLinks ul { float: inherit !important; }
+.profileContainer { padding: 0 0 20px 0 !important; }
+.profileContainer .profileBigImage img { margin-bottom: 10px; }
+.profileContainer ul li label { width: 100% !important; }
+}
+@media only screen and (min-width:320px) and (max-width:479px) {
+.navbar-brand1 img { margin-left: 10px; }
+.topHead { font-size: 16px; margin-top: 0; float: right; margin-right: 20px; width: 134px; text-align: right; }
+.rightSideButton { margin-top: 10px; margin-right: 19px; text-align: center; margin-bottom: 10px; float: right; clear: both; }
+.sidebarProfile { padding: 15px 0 15px 0; }
+.gamesList { width: 100%; margin: 0 0 24px 0; padding-bottom: 20px; border-bottom: 1px solid #D4D4D4; }
+.boxBorder { border-left: 0; min-height: inherit; clear: both; border-top: 1px solid #e2e2e2; padding: 20px 0 0 0; margin: 20px 0 0 0; }
+.starsWonBg { margin: 20px auto 0 auto; }
+.superBrainContainer { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e2e2; }
+.skillPerformanceContainer { margin: 0; }
+.superBrainContainer p span { width: 94px; }
+.navbar-collapse { width: 100%; }
+.footer { text-align: center; }
+.footer .footerLinks { margin-top: 10px; }
+.footer .footerLinks ul li { float: inherit; display: inline-block; }
+.footer .footerLinks ul { float: inherit; }
+.profileContainer { padding: 0 0 20px 0 !important; }
+.profileContainer .profileBigImage img { margin-bottom: 10px; }
+.profileContainer ul li label { width: 100% !important; display: inline; }
+}
+.howToPlayBtn { font-size: 13px; color: #fff; display: block; font-weight: 500; margin-top: 25px; font-size: 15px; text-decoration: underline; }
+.howToPlayBtn:hover { color: #fff; text-decoration: none; }
+.gameStatusContainer { border: 1px solid #d9d9d9; padding: 15px; overflow: hidden }
+.gameStatusContainer li { display: block; clear: both; margin-bottom: 10px; overflow: hidden }
+.gameStatusContainer p { float: left; }
+.gameStatusContainer span { float: right; border: 1px solid #878787; border-radius: 3px; padding: 2px 10px; color: #000; font-size: 12px; font-weight: bold; }
+.gameStatusBtn { font-size: 16px; color: s#757575; }
+.gameStatusBtn .btn-success { background: #67c100; font-size: 15px; border: 1px solid #67c100;  font-weight: normal; display: block }
+.gameStatusBtn .btn-success-red { color: #fff; background: #ff0000; font-size: 15px; border: 1px solid #ff0000;  font-weight: normal; display: block }
+.gameStatusBtn .btn-success-yellow { color: #fff; background: #ffc000; font-size: 15px; border: 1px solid #ffc000;  font-weight: normal; display: block }
+.gameStatusBtn .btn-success-green { color: #fff; background: #67c100; font-size: 15px; border: 1px solid #67c100;  font-weight: normal; display: block }
+.gameStatusBtn .btn-success-orange { color: #fff; background: #ff6600; font-size: 15px; border: 1px solid #ff6600;  font-weight: normal; display: block }
+.gameStatusBtn .btn-success-blue { color: #fff; background: #00b0f0; font-size: 15px; border: 1px solid #00b0f0;  font-weight: normal; display: block }
+.gamePercentageMemory, .gamePercentageVP, .gamePercentageFG, .gamePercentagePS, .gamePercentageL { background: url(../images/LoaderBg.png) no-repeat center; width: 100%; height: 162px; }
+.gamePercentageMemory span, .gamePercentageVP span, .gamePercentageFG span, .gamePercentagePS span, .gamePercentageL span { line-height: 140px; color: #fff; font-size: 20px; letter-spacing: -2px; }
+.memory1,.memory2,.memory3,.memory4,.memory5, .memory6,.memory7,.memory8, .memory9, .memory10,.memory11,.memory12, .memory13,.memory14,.memory15, .memory16,.memory17,.memory18, .memory19, .memory20, .memory21,.memory22,.memory23,.memory24,.memory25, .memory26,.memory27,.memory28, .memory29, .memory30,.memory31,.memory32, .memory33,.memory34,.memory35, .memory36,.memory37,.memory38, .memory39, .memory40,.memory41,.memory42, .memory43,.memory44,.memory45, .memory46,.memory47,.memory48, .memory49, .memory50,.memory51,.memory52, .memory53,.memory54,.memory55, .memory56,.memory57,.memory58, .memory59, .memory60,.memory61,.memory62, .memory63, .memory64,.memory65,.memory66,.memory67,.memory68, .memory69, .memory70,.memory71,.memory72, .memory73,.memory74,.memory75, .memory76, .memory77,.memory78,.memory79, .memory80, .memory81,.memory82,.memory83,.memory84,.memory85, .memory86,.memory87,.memory88, .memory89, .memory90, .memory91,.memory92,.memory93,.memory94,.memory95, .memory96, .memory97,.memory98,.memory99, .memory100 { background: url(../images/Memory_Counter_Sprite.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.VP1,.VP2,.VP3,.VP4,.VP5, .VP6,.VP7,.VP8, .VP9, .VP10,.VP11,.VP12, .VP13,.VP14,.VP15, .VP16,.VP17,.VP18, .VP19, .VP20, .VP21,.VP22,.VP23,.VP24,.VP25, .VP26,.VP27,.VP28, .VP29, .VP30,.VP31,.VP32, .VP33,.VP34,.VP35, .VP36,.VP37,.VP38, .VP39, .VP40,.VP41,.VP42, .VP43,.VP44,.VP45, .VP46,.VP47,.VP48, .VP49, .VP50,.VP51,.VP52, .VP53, .VP54,.VP55,.VP56,.VP57,.VP58, .VP59, .VP60,.VP61,.VP62, .VP63, .VP64,.VP65,.VP66,.VP67,.VP68, .VP69, .VP70,.VP71,.VP72, .VP73,.VP74,.VP75, .VP76, .VP77,.VP78,.VP79, .VP80, .VP81,.VP82,.VP83,.VP84,.VP85, .VP86,.VP87,.VP88, .VP89, .VP90, .VP91,.VP92,.VP93,.VP94,.VP95, .VP96, .VP97,.VP98,.VP99, .VP100 { background: url(../images/Visual_Processing_Counter_Sprite.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.FA1,.FA2,.FA3,.FA4,.FA5, .FA6,.FA7,.FA8, .FA9, .FA10,.FA11,.FA12, .FA13,.FA14,.FA15, .FA16,.FA17,.FA18, .FA19, .FA20, .FA21,.FA22,.FA23,.FA24,.FA25, .FA26,.FA27,.FA28, .FA29, .FA30,.FA31,.FA32, .FA33,.FA34,.FA35, .FA36,.FA37,.FA38, .FA39, .FA40,.FA41,.FA42, .FA43,.FA44,.FA45, .FA46,.FA47,.FA48, .FA49, .FA50,.FA51,.FA52, .FA53, .FA54,.FA55, .FA56,.FA57,.FA58, .FA59, .FA60, .FA61,.FA62, .FA63, .FA64,.FA65,.FA66,.FA67,.FA68, .FA69, .FA70,.FA71,.FA72, .FA73,.FA74,.FA75, .FA76, .FA77,.FA78,.FA79, .FA80, .FA81,.FA82,.FA83,.FA84,.FA85, .FA86,.FA87,.FA88, .FA89, .FA90, .FA91,.FA92,.FA93,.FA94,.FA95, .FA96, .FA97,.FA98,.FA99, .FA100 { background: url(../images/Focus_Attention_Counter_Sprite.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.PS1,.PS2,.PS3,.PS4,.PS5, .PS6,.PS7,.PS8, .PS9, .PS10,.PS11,.PS12, .PS13,.PS14,.PS15, .PS16,.PS17,.PS18, .PS19, .PS20, .PS21,.PS22,.PS23,.PS24,.PS25, .PS26,.PS27,.PS28, .PS29, .PS30,.PS31,.PS32, .PS33,.PS34,.PS35, .PS36,.PS37,.PS38, .PS39, .PS40,.PS41,.PS42, .PS43,.PS44,.PS45, .PS46,.PS47,.PS48, .PS49, .PS50,.PS51,.PS52, .PS53,.PS54,.PS55, .PS56,.PS57,.PS58, .PS59, .PS60,.PS61,.PS62, .PS63, .PS64,.PS65,.PS66,.PS67,.PS68, .PS69, .PS70,.PS71,.PS72, .PS73,.PS74,.PS75, .PS76, .PS77,.PS78,.PS79, .PS80, .PS81,.PS82,.PS83,.PS84,.PS85, .PS86,.PS87,.PS88, .PS89, .PS90, .PS91,.PS92,.PS93,.PS94,.PS95, .PS96, .PS97,.PS98,.PS99, .PS100 { background: url(../images/Problem_Solving_Counter_Sprite.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+.linguistics1,.linguistics2,.linguistics3,.linguistics4,.linguistics5, .linguistics6,.linguistics7,.linguistics8, .linguistics9, .linguistics10,.linguistics11,.linguistics12, .linguistics13,.linguistics14,.linguistics15, .linguistics16,.linguistics17,.linguistics18, .linguistics19, .linguistics20, .linguistics21,.linguistics22,.linguistics23,.linguistics24,.linguistics25, .linguistics26,.linguistics27,.linguistics28, .linguistics29, .linguistics30,.linguistics31,.linguistics32, .linguistics33,.linguistics34,.linguistics35, .linguistics36,.linguistics37,.linguistics38, .linguistics39, .linguistics40,.linguistics41,.linguistics42, .linguistics43,.linguistics44,.linguistics45, .linguistics46,.linguistics47,.linguistics48, .linguistics49, .linguistics50,.linguistics51,.linguistics52, .linguistics53, .linguistics54,.linguistics55,.linguistics56, .linguistics57,.linguistics58,.linguistics59, .linguistics60,.linguistics61,.linguistics62, .linguistics63, .linguistics64,.linguistics65,.linguistics66,.linguistics67,.linguistics68, .linguistics69, .linguistics70,.linguistics71,.linguistics72, .linguistics73,.linguistics74,.linguistics75, .linguistics76, .linguistics77,.linguistics78,.linguistics79, .linguistics80, .linguistics81,.linguistics82,.linguistics83,.linguistics84,.linguistics85, .linguistics86,.linguistics87,.linguistics88, .linguistics89, .linguistics90, .linguistics91,.linguistics92,.linguistics93,.linguistics94,.linguistics95, .linguistics96, .linguistics97,.linguistics98,.linguistics99, .linguistics100{ background: url(../images/Linguistics_Counter_Sprite.png) no-repeat; width: 140px; height: 140px; display: block; margin: 0 auto; }
+ 
+.memory1,.memory2,.memory3, .VP1,.VP2,.VP3, .FA1,.FA2,.FA3, .PS1,.PS2,.PS3, .linguistics1,.linguistics2,.linguistics3 { background-position: 0px 0px; }
+.memory4,.memory5,.memory6, .VP4,.VP5,.VP6, .FA4,.FA5,.FA6, .PS4,.PS5,.PS6, .linguistics4,.linguistics5,.linguistics6 { background-position: -140px 0px; }
+.memory7,.memory8,.memory9, .VP7,.VP8,.VP9, .FA7,.FA8,.FA9, .PS7,.PS8,.PS9, .linguistics7,.linguistics8,.linguistics9 { background-position: -280px 0px; }
+.memory10, .VP10, .FA10, .PS10, .linguistics10 { background-position: -420px 0px; }
+.memory11,.memory12,.memory13, .VP11,.VP12,.VP13, .FA11,.FA12,.FA13,.PS11,.PS12, .PS13, .linguistics11 ,.linguistics12 ,.linguistics13 { background-position: 0px -140px; }
+.memory14,.memory15,.memory16, .VP14,.VP15,.VP16, .FA14,.FA15,.FA16, .PS14,.PS15,.PS16, .linguistics14,.linguistics15,.linguistics16 { background-position: -140px -140px; }
+.memory17,.memory18,.memory19, .VP17,.VP18,.VP19, .FA17,.FA18,.FA19, .PS17,.PS18,.PS19, .linguistics19 { background-position: -280px -140px; }
+.memory20, .VP20, .FA20, .PS20, .linguistics20 { background-position: -420px -140px; }
+.memory21,.memory22,.memory23, .VP21,.VP22,.VP23, .FA21,.FA22,.FA23, .PS21,.PS22,.PS23, .linguistics21,.linguistics22,.linguistics23 { background-position: 0px -280px; }
+.memory24,.memory25,.memory26, .VP24,.VP25,.VP26,.FA24,.FA25, .FA26, .PS24,.PS25,.PS26, .linguistics24,.linguistics25,.linguistics26 { background-position: -140px -280px; }
+.memory27,.memory28,.memory29, .VP27,.VP28,.VP29, .FA27,.FA28,.FA29, .PS27,.PS28,.PS29, .linguistics27,.linguistics28,.linguistics29 { background-position: -280px -280px; }
+.memory30, .VP30, .FA30, .PS30, .linguistics30 { background-position: -420px -280px; }
+.memory31,.memory32,.memory33, .VP31,.VP32,.VP33,  .FA31, .FA32,.FA33, .PS31,.PS32,.PS33,.linguistics31,.linguistics32, .linguistics33 { background-position: 0px -420px; }
+.memory34,.memory35,.memory36, .VP34,.VP35,.VP36, .FA34,.FA35,.FA36, .PS34,.PS35,.PS36, .linguistics34,.linguistics35,.linguistics36 { background-position: -140px -420px; }
+.memory37,.memory38,.memory39, .VP37,.VP38,.VP39, .FA37,.FA38,.FA39, .PS37,.PS38,.PS39, .linguistics37,.linguistics38,.linguistics39 { background-position: -280px -420px; }
+.memory40, .VP40, .FA40, .PS40, .linguistics40 { background-position: -420px -420px; }
+.memory41,.memory42,.memory43, .VP41,.VP42,.VP43,.FA41,.FA42, .FA43,.PS41,.PS42, .PS43,.linguistics41,.linguistics42, .linguistics43 { background-position: 0px -560px; }
+.memory44,.memory45,.memory46,.VP44,.VP45, .VP46,.FA44,.FA45, .FA46,.PS44,.PS45, .PS46,.linguistics44 ,.linguistics45 , .linguistics46 { background-position: -140px -560px; }
+.memory47,.memory48,.memory49, .VP47,.VP48,.VP49, .FA47,.FA48,.FA49, .PS47,.PS48,.PS49,.linguistics47 ,.linguistics48 , .linguistics49 { background-position: -280px -560px; }
+.memory50, .VP50, .FA50, .PS50, .linguistics50 { background-position: -420px -560px; }
+.memory51,.memory52,.memory53, .VP51,.VP52,.VP53, .FA51,.FA52,.FA53, .PS51,.PS52,.PS53, .linguistics51,.linguistics52,.linguistics53 { background-position: 0px -700px; }
+.memory54,.memory55,.memory56, .VP54,.VP55,.VP56, .FA54,.FA55,.FA56, .PS54,.PS55,.PS56, .linguistics54 ,.linguistics55 ,.linguistics56 { background-position: -140px -700px; }
+.memory57,.memory58,.memory59, .VP57,.VP58,.VP59, .FA57,.FA58,.FA59, .PS57,.PS58,.PS59,.linguistics57,.linguistics58, .linguistics59 { background-position: -280px -700px; }
+.memory60, .VP60, .FA60, .PS60, .linguistics60 { background-position: -420px -700px; }
+.memory61,.memory62,.memory63, .VP61, .VP62, .VP63,.FA61,.FA62, .FA63,.PS61,.PS62, .PS63, .linguistics61, .linguistics62, .linguistics63 { background-position: 0px -840px; }
+.memory64,.memory65,.memory66, .VP64,.VP65,.VP66, .FA64,.FA65,.FA66, .PS64,.PS65,.PS66, .linguistics64,.linguistics65,.linguistics66 { background-position: -140px -840px; }
+.memory67,.memory68,.memory69, .VP67,.VP68,.VP69, .FA67, .FA68, .FA69, .PS67,.PS68,.PS69,.linguistics67,.linguistics68, .linguistics69 { background-position: -280px -840px; }
+.memory70, .VP70, .FA70, .PS70, .linguistics70 { background-position: -420px -840px; }
+.memory71,.memory72,.memory73, .VP71,.VP72,.VP73, .FA71,.FA72,.FA73,.PS71,.PS72, .PS73,.linguistics71,.linguistics72, .linguistics73 { background-position: 0px -980px; }
+.memory74,.memory75,.memory76,.VP74,.VP75, .VP76,.FA74,.FA75, .FA76,.PS74,.PS75, .PS76,.linguistics74,.linguistics75, .linguistics76 { background-position: -140px -980px; }
+.memory77,.memory78,.memory79, .VP77,.VP78,.VP79,.FA77,.FA78, .FA79,.PS77,.PS78, .PS79,.linguistics77,.linguistics78, .linguistics79 { background-position: -280px -980px; }
+.memory80, .VP80, .FA80, .PS80, .linguistics80 { background-position: -420px -980px; }
+.memory81,.memory82,.memory83, .VP81,.VP82,.VP83, .FA81,.FA82,.FA83, .PS81,.PS82,.PS83,.linguistics81,.linguistics82, .linguistics83 { background-position: 0px -1120px; }
+.memory84,.memory85,.memory86, .VP84,.VP85,.VP86, .FA84,.FA85,.FA86, .PS84,.PS85,.PS86,.linguistics84, .linguistics85,  .linguistics86 { background-position: -140px -1120px; }
+.memory87,.memory88,.memory89, .VP87,.VP88,.VP89, .FA87,.FA88,.FA89,.PS87,.PS88, .PS89,.linguistics87,.linguistics88, .linguistics89 { background-position: -280px -1120px; }
+.memory90, .VP90, .FA90, .PS90, .linguistics90 { background-position: -420px -1120px; }
+.memory91,.memory92,.memory93,.VP91,.VP92, .VP93,.FA91,.FA92, .FA93,.PS91,.PS92, .PS93,.linguistics91,.linguistics92, .linguistics93 { background-position: 0px -1260px; }
+.memory94,.memory95,.memory96, .VP94,.VP95,.VP96,.FA94,.FA95, .FA96,.PS94,.PS95, .PS96, .linguistics94,.linguistics95,.linguistics96 { background-position: -140px -1260px; }
+.memory97,.memory98,.memory99,.VP97,.VP98, .VP99,.FA97,.FA98, .FA99,.PS97,.PS98, .PS99,.linguistics97 ,.linguistics98 , .linguistics99 { background-position: -280px -1260px; }
+.memory100, .VP100, .FA100, .PS100, .linguistics100 { background-position: -420px -1260px; }
+.myGamesWrapper .earnedStars { padding-top: 0; }
+.statusCompletedIcon, .statusNotPlayIcon, .statusInCompletedIcon { background: url(../images/gameStatusIcon.png); width: 14px !important; height: 14px !important; padding: 0 !important; border: 0 !important; display: block; float: inherit !important; display: inline-block; margin-right: 10px; }
+.statusCompletedIcon { background-position: 0 0; }
+.statusNotPlayIcon { background-position: -14px 0; }
+.statusInCompletedIcon { background-position: -28px 0; }
+/*
+.disableGameStatus .btn { background:#a6a6a6; border:1px solid #a6a6a6; }
+.inCompleteGameStatus .btn { background:#ffc000; border:1px solid #ffc000; }
+*/
+
+.footer { background: #3c3c3c; color: #fff; padding: 20px; font-size: 13px; }
+.footer .footerLinks { text-align: right; overflow: hidden; }
+.footer .footerLinks ul { float: right; }
+.footer .footerLinks ul li { float: left; }
+.footer .footerLinks ul li a { color: #fff; text-decoration: none; }
+.footer .footerLinks ul li a:hover { color: #fff; text-decoration: underline; }
+.footer .footerLinks ul li span { padding: 0 15px; }
+.reportChartContainer { text-align: center; }
+.redColor { background: #e81919; }
+.yellowColor { background:#ffa300; margin-bottom:10px; }
+.greenColor { background:#8bcc46; margin-bottom:10px; }
+.orangeColor { background:#f16202; margin-bottom:10px; }
+.blueColor { background:#0ab7f6; margin-bottom:10px; }
+
+.reportChartContainer1 { padding:20px; overflow:hidden; }
+.skillName { float:left; width:34.5%; display:inline-block; padding: 10px 0 11px 0; border-right:1px solid #000; margin-bottom:0;  }
+.mt10 { margin-top:9px; }
+@media (min-width:320px) and (max-width:767px) {
+.footer .footerLinks { text-align: center !important; }
+.footer .footerLinks ul li { float: inherit !important; }
+.footer .footerLinks ul { float: inherit !important; }
+.informationContainer { padding: 15px 15px 0 15px !important; }
+}
+@media (min-width:480px) and (max-width:599px) {
+#chart-container svg { width: 100% !important; height: 200px !important }
+#chartobject-1 { width: 100% !important; height: 200px !important }
+.percentageRank { margin: 0 auto !important }
+.informationContainer { padding: 15px 15px 0 15px !important; }
+.gamePerformanceChat .gamePerformanceInner span { height: 20px; }
+.gamePerformanceChat .gamePerformanceInner { width: 90%; }
+.gamePerformanceChat li { margin-bottom: 15px; }
+div.meter { width:100% !important; }
+.skillName { width:100% !important; float: left; padding: 10px 0 2px 0 !important; border-right: 0 !important; margin-bottom: 0; }
+.mt10 { margin-top: 0 !important; }
+.mb20 { margin-bottom: 10px !important; }
+.reportChartContainer1 { padding: 0 !important; }
+.pt0 { padding-top:0 !important; }
+}
+ @media (min-width:320px) and (max-width:479px) {
+#chart-container svg { width: 100% !important; height: 200px !important }
+#chartobject-1 { width: 100% !important; height: 200px !important }
+.chart { width: 100% !important; }
+.chart .label { font: 11px sans-serif !important; }
+.rankDetails h4 { font-size: 13px; }
+.rankingBased li { width: 100%; margin-bottom: 10px; padding-top: 10px; }
+.rankingBased ul li +li { border-left: 0 !important; border-top: 1px solid #e7e7e7 }
+.rankingBased ul { padding: 20px 0 0px 0; overflow: hidden; }
+.percentageRank { margin: 0 auto !important }
+.informationContainer { padding: 15px 15px 0 15px !important; }
+.footer .footerLinks ul li span { padding: 0 0px 0 1px; }
+.big .gamePerformanceChat .gamePerformanceHead { width: 15px; }
+.big .gamePerformanceChat .gamePerformanceInner { border: 1px solid #e7e7e7; background: #e4e4e4; float: left; width: 270px; }
+.gamePerformanceChat .gamePerformanceInner { width: 90%; }
+.big .gamePerformanceChat .gamePerformanceInner span { width: 10%; padding-top: 0px; height: 15px; }
+.superBrainWrapper { padding: 0; margin: 0; }
+.gamePerformanceStatus li { margin-bottom: 5px; display: inline-block; margin-left: 10px; }
+div.meter { width:100% !important; }
+.skillName { width:100% !important; float: left; padding: 10px 0 2px 0 !important; border-right: 0 !important; margin-bottom: 0; }
+.mt10 { margin-top: 0 !important; }
+.mb20 { margin-bottom: 10px !important; }
+.reportChartContainer1 { padding: 0 !important; }
+.pt0 { padding-top:0 !important; }
+}
+@media (min-width:1200px) and (max-width:1360px) {
+.superBrainContainer { margin-bottom: 20px; padding-bottom: 20px; }
+.superBrainContainer p { font-size: 12px; }
+.superBrainContainer p span { width: inherit; font-size: 12px; }
+.playStatusContainer ul li { margin-right: 6px; }
+.playStatusContainer .MColor, .playStatusContainer .VPColor, .playStatusContainer .FAColor, .playStatusContainer .PSColor, .playStatusContainer .LIColor { width: 20px; height: 20px; }
+.playStatusContainer .MColor-border, .playStatusContainer .VPColor-border, .playStatusContainer .FAColor-border, .playStatusContainer .PSColor-border, .playStatusContainer .LIColor-border { width: 20px; height: 20px; }
+}
+@media (min-width:1101px) and (max-width:1200px) {
+.gameStatusContainer p { font-size: 12px; }
+}
+.chart .legend { fill: black; font: 14px sans-serif; text-anchor: start; font-size: 12px; }
+.chart text { fill: white; font: 10px sans-serif; text-anchor: end; }
+.chart .label { fill: black; font: 13px sans-serif; text-anchor: end; }
+.bar:hover { /*fill: brown;*/
+}
+.axis path, .axis line { fill: none; stroke: #000; shape-rendering: crispEdges; }
+.profileContainer .profileBigImage { text-align: center; }
+.profileContainer .profileBigImage img { width: 180px; height: 180px; border: 5px solid #e6e5e5; }
+.profileContainer { padding: 60px 0; }
+.profileContainer h3 { margin: 0; padding: 0 0 10px 0; font-size: 24px; }
+.profileContainer ul li { font-size: 15px; margin-bottom: 10px; }
+.profileContainer ul li label { width: 140px; }
+.informationContainer { padding: 40px 0 0 0; text-align: center; font-size: 25px;  }
+.skillPowerindexScore { display: block; width: 70px; height: 70px; margin: 0 auto; background: #ff8225; border: 4px solid #ff7209; border-radius: 50%; line-height: 62px;  font-size: 35px; color: #fff; }
+.percentageRank p { margin: 22px 0 0 0; }
+.percentageRank span { font-size: 18px; font-weight: bold; width: 100%; display: block; text-transform: uppercase; line-height: 10px; }
+.percentageRank { border-radius: 50%; border: 10px solid #fc6f08; background: rgb(251,137,52); background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZiODkzNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjcxMDgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, rgba(251,137,52,1) 0%, rgba(255,113,8,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(251,137,52,1)), color-stop(100%, rgba(255,113,8,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(251,137,52,1) 0%, rgba(255,113,8,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(251,137,52,1) 0%, rgba(255,113,8,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(251,137,52,1) 0%, rgba(255,113,8,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(251,137,52,1) 0%, rgba(255,113,8,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb8934', endColorstr='#ff7108', GradientType=0 ); /* IE6-8 */
+color: #fff; width: 150px; height: 150px; display: block; margin: 55px auto 0 auto; text-align: center; font-size: 70px; line-height: 70px; font-weight: bold; }
+.rankingBased { text-align: center; }
+.rankingBased h4 { font-weight: bold; margin-top: 0; }
+.rankingBased .rankCount { text-align: center; border: 5px solid #ff7006; color: #ff7006; display: inline-block; width: 120px; height: 120px; line-height: 110px; border-radius: 50%; font-size: 40px;  font-weight: bold; }
+.rankingBased ul { padding: 20px 0; overflow: hidden; }
+.rankingBased ul li +li { border-left: 1px solid #e7e7e7; }
+.rankDetails { overflow: hidden; }
+.rankDetails p { width: 20%; text-align: center; }
+.rankDetails h4 { width: 40%; font-size: 15px; line-height: 37px; }
+.rankDetails p, .rankDetails h4 { float: left; margin: 0; padding: 0; }
+.rankDetails li { width: 100%; display: block; overflow: hidden; height: 37px; line-height: 37px; padding: 0 10px; }
+.headingRanks { background: #ff7006; color: #fff; }
+.rankDetails .alterRow { background: #efefef; }
+.memoryRank p span, .VPRank p span, .FARank p span, .PSRank p span, .LIRank p span { font-size: 19px; display: inline-block; padding: 5px; height: 30px; overflow: hidden; margin-top: 5px; line-height: 18px; border-radius: 3px; }
+.memoryRank p span { border: 2px solid #ed1c24; color: #ed1c24; }
+.VPRank p span { border: 2px solid #ffa800; color: #ffa800; }
+.FARank p span { border: 2px solid #22b14c; color: #22b14c; }
+.PSRank p span { border: 2px solid #ff7f27; color: #ff7f27; }
+.LIRank p span { border: 2px solid #00a2e8; color: #00a2e8; }
+.palyStatusRank { font-size: 12px; font-weight: bold; color: #656565; border: 1px solid #AFAFAF; float: left; width: 23px; height: 23px; line-height: 22px; border-radius: 50%; margin-top: 5px; }
+
+
+div.meter {
+	float:left; width:65%;
+  height: 25px;
+  border: 1px solid #b0b0b0;
+  /* viewing purposes */
+  /* viewing purposes */
+  -webkit-box-shadow: inset 0 3px 5px 0 #d3d0d0;
+  -moz-box-shadow: inset 0 3px 5px 0 #d3d0d0;
+  box-shadow: inset 0 3px 5px 0 #d3d0d0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+div.meter span {
+	color: #fff;
+    top: 0;
+    line-height: 0px;
+    padding-left: 7px;
+    font-weight: bold;
+text-align: right;
+padding-right: 5px;	
+  display: block;
+  height: 100%;
+  animation: grower 1s linear;
+  -moz-animation: grower 1s linear;
+  -webkit-animation: grower 1s linear;
+  -o-animation: grower 1s linear;
+  position: relative;
+  left: -1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  -webkit-background-size: 45px 45px;
+  -moz-background-size: 45px 45px;
+  -o-background-size: 45px 45px;
+  background-size: 45px 45px;
+}
+div.meter span:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 50%;
+  position: relative;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.03);
+}
+div.meter p {
+  position: absolute;
+  top: 0;
+  margin: 0 10px;
+  line-height: 25px;
+  font-weight: bold;
+  -webkit-font-smoothing: antialised;
+  font-size: 15px;
+  color: #333;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes grower {
+  0% {
+    width: 0%;
+  }
+}
+
+@-moz-keyframes grower {
+  0% {
+    width: 0%;
+  }
+}
+
+@-webkit-keyframes grower {
+  0% {
+    width: 0%;
+  }
+}
+
+@-o-keyframes grower {
+  0% {
+    width: 0%;
+  }
+}
+
+
+.pieChartContainer { width: 100%; height: 280px; margin: 0 auto; }
+.highcharts-button { display:none; }
+
+.gamecategory_1 { fill:#ff0000 !important; }
+.gamecategory_2 { fill:#ffc000 !important; }
+.gamecategory_3 { fill:#92d050 !important; }
+.gamecategory_4 { fill:#ff6600 !important; }
+.gamecategory_5 { fill:#00b0f0 !important; }
+
+.chartLegend .MColor, .chartLegend .VPColor, .chartLegend .FAColor, .chartLegend .PSColor, .chartLegend .LIColor { width:20px; height:20px; border-radius:50%; display:block; float:left; margin-right:5px; }
+.chartLegend li { float:left; }
+.chartLegend { overflow: hidden; margin-top: -40px !important;text-align: left;padding: 18px 20px 18px 20px;}
+.chartLegend .MColor { background: #ff0000; }
+.chartLegend .VPColor { background: #ffc000; }
+.chartLegend .FAColor { background: #92d050; }
+.chartLegend .PSColor { background: #ff6600; }
+.chartLegend .LIColor { background: #00b0f0; }
+
+
+.landingContainer { text-align:center; padding-top:30px; }
+.landingPageBox { background:#ececec; padding: 64px 15px 5px 15px; margin-top: -62px; margin-bottom:25px; }
+.landingIcon { position:relative; z-index:999; }
+.round { background:#fff; width:120px; height:120px; border-radius:50%; margin:0 auto; border:5px solid #000; padding-top:14px; }
+.homeGameContainer { background: #ff0000; }
+.homeQuestionContainer { background: #ffc000; }
+.homeGamescoreContainer { background: #92d050; }
+.homeReportContainer { background: #00b0f0; }
+.homeTimeContainer { background: #ff6600; }
+.homePlayContainer { background: #7030a0; }
+.timeSlotContainer { background: #a21d7e; }
+.homeHowtoplayContainer { background: #538134; }
+.landingPageBox h4{ color:#fff; font-weight:bold; font-size:20px; }
+.landingPageBox p { font-size:15px; min-height:42px; color:#fff;}
+.sidebarProfile .menu{background-color:#18dac4;}
+/*----------------   bounceIn  ----------------------*/
+/*base code*/
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes bounceIn {
+  0%, 100%, 20%, 40%, 60%, 80% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3)
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1)
+  }
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9)
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03)
+  }
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+@keyframes bounceIn {
+  0%, 100%, 20%, 40%, 60%, 80% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    -ms-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3)
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    -ms-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1)
+  }
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    -ms-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9)
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    -ms-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03)
+  }
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    -ms-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn
+}
+
+/* End */
+.circle {
+	-webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+/* .circle {
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+.circle:hover {
+-webkit-transform: rotate(360deg);
+transform: rotate(360deg);
+} */
+.gamescoreContainer{margin-top: 5px;border: 3px dotted #d9d9d9;}
+.border {
+  height: 100px;
+  width: 200px;
+  background: linear-gradient(90deg, blue 50%, transparent 50%), linear-gradient(90deg, blue 50%, transparent 50%), linear-gradient(0deg, blue 50%, transparent 50%), linear-gradient(0deg, blue 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 16px 4px, 16px 4px, 4px 16px, 4px 16px;
+  background-position: 0px 0px, 212px 116px, 0px 116px, 216px 0px;
+  padding: 10px;
+  transition: background-position 2s;
+}
+.border:hover{
+    background-position: 212px 0px, 0px 116px, 0px 0px, 216px 116px;
+}
+h3{color: #ff6d01;}
+/* ------------- Footer Part --------- */
+footer {
+    /* background-image: url(../images/home/KinderAngels-footer.png); */
+    background-color:#1f7096;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    padding:40px 0 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.footerBottom {
+    width: 100%;
+    background: #1e242d;
+}
+.footerBottom p {
+    text-align: center;
+    margin: 0;
+    padding: 15px 0;
+}
+p {
+    font-weight: normal;
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 22px;
+}
+footer ul li {
+    line-height: 40px;
+}
+footer ul li.callicon {
+    background: url(../images/call-icon.png) no-repeat left;
+    padding: 0 0 0 35px;
+}
+footer ul li.msgicon {
+    background: url(../images/msg-icon.png) no-repeat left;
+    padding: 0 0 0 35px;
+}
+footer span {
+    display: block;
+    padding: 0 0 5px;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width:767px){
+	.nav{float:none; width:auto;}
+	.navbar-toggle{ background:#f92c8b; border-radius:0; width:100%; margin:0; color:#fff;}
+	.navbar-toggle strong{float:left;}
+	.navbar-toggle .icon-bar{ background:#fff; float:right;     width: 100%;}
+	.navbar-collapse { float:none;}
+
+	.businessCount span {font-size: 34px !important; float:}
+	.taglines {/*padding: 13px 0 20px 0;*/}
+	.indexMiddle div{ width: 100%; float: none; clear: both;}
+	.indexMiddle img { margin: 0 0 0 9px;}
+	
+	.slider {/* margin: 30px 25px; */}
+	.mediaList div.medialogo { padding: 30px 25px 0; border:none; }
+	.latestNews { padding: 0 0 25px;}
+	.mediaList h2, .latestNews h2 { margin:0;}
+	footer div.row > div + div { /*padding: 10px 20px 0 20px;*/}
+}
+ @media only screen and (min-width: 600px) and (max-width: 767px) {
+	  .col-sm-6 {width: 50%;float:left;padding:10px 20px 19px 50px !important;}
+	  .col-sm-6 li{line-height: 30px;}
+	   footer{background-size: 100% !important;background-position: center bottom !important;}
+}
+ @media only screen and (min-width:768px) and (max-width:999px) {
+		.col-sm-6 {width: 50%;float:left;padding:10px 20px 19px 50px !important;}
+	   .col-sm-6 li{line-height: 30px;}
+	   footer{background-position: center bottom !important;background-size: 100% !important;;}
+
+}
+ @media (min-width: 1000px) and (max-width: 1199px) {
+	 .tagline3{padding: 32px !important;}
+	 .col-sm-6 {width: 50%;float:left;padding:10px 20px 19px 50px !important;}
+	 .col-sm-6 li{line-height: 30px;}
+}
+
+/*---------------------------------------------------------------------------------*/
+.section_three ul li{float:left;}
+.section_three{background: #18dac4; }
+.section_two {height: 100px;}
+.section_two {
+    /* background: #58c8b8; */
+    background: #92278f
+ width: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #FFF;
+    overflow: hidden;
+}
+.section_three {
+    /* height: 80px; */
+    /* background-image: url(../images/blueBG.png); */
+    width: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* background-color: transparent; */
+    background-color: #fff;
+}
+.page-header{margin-top: 20px;margin-bottom: 10px;}
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) {
+	.puzzle-model {padding: 30px 0px 10px 0px;}
+	.login-btn{padding: 30px 0px 10px 0px;}
+	.flip-clock-wrapper{margin-left:14% !important;}
+	
+}
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+	.puzzle-model {padding: 10px 0px 5px 0px;}
+	.login-btn{padding: 20px 0px 0px 0px;}
+	.flip-clock-wrapper{margin-left:18% !important;}
+	.flip-clock-wrapper ul{width:6.5% !important;}
+}
+@media (min-width:375px) and (max-width: 667px) and (orientation: landscape) {
+	.flip-clock-wrapper{margin-left:14%	 !important}
+}
+@media (min-width:414px) and (max-width: 736px) and (orientation: landscape) {
+	.flip-clock-wrapper{margin-left:14% !important;}
+}
+@media (min-width:768px) and (max-width:1024px){
+	.flip-clock-wrapper{margin-left:14% !important;}
+}
