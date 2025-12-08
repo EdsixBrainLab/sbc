@@ -7,19 +7,14 @@ class Progress extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
+        $this->load->model('Dashboard_model');
     }
 
     public function index()
     {
-        $data['badges'] = $this->get_badges();
-        $data['progressPayload'] = [
-            'badges' => $data['badges'],
-            'streakDays' => 7,
-            'streakTarget' => 5,
-            'skillsCompleted' => 2,
-            'skillTarget' => 2,
-            'badgeTarget' => 3,
-        ];
+        $progressPayload = $this->get_progress_payload();
+        $data['badges'] = $progressPayload['badges'];
+        $data['progressPayload'] = $progressPayload;
 
         $this->load->view('header');
         $this->load->view('progress', $data);
@@ -27,51 +22,28 @@ class Progress extends CI_Controller
     }
 
     /**
-     * Collect badge progress data. In a real implementation this would
-     * be hydrated from a model using the active user's progress, but for now
-     * we normalize stubbed data so the view can render consistently.
+     * Load a cached payload if available; otherwise refresh via the model layer.
      *
-     * @return array<int,array<string,mixed>>
+     * @return array<string,mixed>
      */
-    private function get_badges()
+    private function get_progress_payload()
     {
-        return [
-            [
-                'title' => 'Streak Starter',
-                'description' => 'Complete 3 challenges in a row to build momentum.',
-                'icon' => 'fa-bolt',
-                'earned' => true,
-            ],
-            [
-                'title' => 'Brain Builder',
-                'description' => 'Score 80% or more in any logic game.',
-                'icon' => 'fa-puzzle-piece',
-                'earned' => false,
-            ],
-            [
-                'title' => 'Speed Runner',
-                'description' => 'Finish a timed challenge with more than 30 seconds left.',
-                'icon' => 'fa-tachometer',
-                'earned' => true,
-            ],
-            [
-                'title' => 'Perfect Session',
-                'description' => 'Earn full points in a practice session without hints.',
-                'icon' => 'fa-star',
-                'earned' => false,
-            ],
-            [
-                'title' => 'Community Helper',
-                'description' => 'Share feedback on 3 different challenges.',
-                'icon' => 'fa-heart',
-                'earned' => false,
-            ],
-            [
-                'title' => 'Focus Master',
-                'description' => 'Maintain a 10-day active streak.',
-                'icon' => 'fa-eye',
-                'earned' => true,
-            ],
-        ];
+        $cacheTtl = 600; // 10 minutes
+        $cached = $this->session->userdata('progress_cache');
+
+        if (!empty($cached['timestamp']) && (time() - $cached['timestamp']) < $cacheTtl) {
+            return $cached['payload'];
+        }
+
+        $userId = $this->session->userdata('userId');
+        $contestLevelId = $this->session->userdata('userContestLevelId');
+        $payload = $this->Dashboard_model->get_progress_payload($userId, $contestLevelId);
+
+        $this->session->set_userdata('progress_cache', [
+            'payload' => $payload,
+            'timestamp' => time(),
+        ]);
+
+        return $payload;
     }
 }

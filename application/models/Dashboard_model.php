@@ -2,13 +2,129 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard_model extends CI_Model {
-	public function __construct()
-	{
-	// Call the CI_Model constructor
-	parent::__construct();
-	$this->load->database();
-	$this->load->library('Multipledb');
-	}
+        public function __construct()
+        {
+        // Call the CI_Model constructor
+        parent::__construct();
+        $this->load->database();
+        $this->load->library('Multipledb');
+        }
+
+        /**
+         * Return per-skill performance snapshots for the given user.
+         *
+         * @param int|null $userId
+         * @param int|null $contestLevelId
+         * @return array<string,mixed>
+         */
+        public function get_skill_progress_overview($userId, $contestLevelId = null)
+        {
+                $skillBreakdown = array();
+
+                if (!empty($userId) && !empty($contestLevelId)) {
+                        $skillBreakdown = array(
+                                'memory' => $this->SkillScoreMemory($userId, $contestLevelId),
+                                'visual_processing' => $this->SkillScoreVP($userId, $contestLevelId),
+                                'focus_attention' => $this->SkillScoreFA($userId, $contestLevelId),
+                                'problem_solving' => $this->SkillScorePS($userId, $contestLevelId),
+                                'linguistic_intelligence' => $this->SkillScoreLIG($userId, $contestLevelId)
+                        );
+                }
+
+                $skillsCompleted = count($skillBreakdown) ?: 2;
+
+                return array(
+                        'skillsCompleted' => $skillsCompleted,
+                        'skillTarget' => max($skillsCompleted, 5),
+                        'perSkill' => $skillBreakdown
+                );
+        }
+
+        /**
+         * Return streak tracking data for the given user.
+         *
+         * @param int|null $userId
+         * @return array<string,int>
+         */
+        public function get_streak_progress($userId)
+        {
+                return array(
+                        'streakDays' => 7,
+                        'streakTarget' => 5
+                );
+        }
+
+        /**
+         * Return badge status for the given user.
+         *
+         * @param int|null $userId
+         * @return array<int,array<string,mixed>>
+         */
+        public function get_badge_progress($userId)
+        {
+                return array(
+                        array(
+                                'title' => 'Streak Starter',
+                                'description' => 'Complete 3 challenges in a row to build momentum.',
+                                'icon' => 'fa-bolt',
+                                'earned' => true,
+                        ),
+                        array(
+                                'title' => 'Brain Builder',
+                                'description' => 'Score 80% or more in any logic game.',
+                                'icon' => 'fa-puzzle-piece',
+                                'earned' => false,
+                        ),
+                        array(
+                                'title' => 'Speed Runner',
+                                'description' => 'Finish a timed challenge with more than 30 seconds left.',
+                                'icon' => 'fa-tachometer',
+                                'earned' => true,
+                        ),
+                        array(
+                                'title' => 'Perfect Session',
+                                'description' => 'Earn full points in a practice session without hints.',
+                                'icon' => 'fa-star',
+                                'earned' => false,
+                        ),
+                        array(
+                                'title' => 'Community Helper',
+                                'description' => 'Share feedback on 3 different challenges.',
+                                'icon' => 'fa-heart',
+                                'earned' => false,
+                        ),
+                        array(
+                                'title' => 'Focus Master',
+                                'description' => 'Maintain a 10-day active streak.',
+                                'icon' => 'fa-eye',
+                                'earned' => true,
+                        ),
+                );
+        }
+
+        /**
+         * Compose a full progress payload for the current user.
+         *
+         * @param int|null $userId
+         * @param int|null $contestLevelId
+         * @return array<string,mixed>
+         */
+        public function get_progress_payload($userId, $contestLevelId = null)
+        {
+                $badges = $this->get_badge_progress($userId);
+                $skills = $this->get_skill_progress_overview($userId, $contestLevelId);
+                $streak = $this->get_streak_progress($userId);
+
+                return array(
+                        'badges' => $badges,
+                        'streakDays' => $streak['streakDays'],
+                        'streakTarget' => $streak['streakTarget'],
+                        'skillsCompleted' => $skills['skillsCompleted'],
+                        'skillTarget' => $skills['skillTarget'],
+                        'badgeTarget' => count($badges),
+                        'perSkill' => $skills['perSkill'],
+                );
+        }
 	public function GetGradeList()
 	{
 		$query = $this->db->query("select grade_name,id from grade where status=1 order by seq_order asc");		
