@@ -61,7 +61,7 @@ if(window==window.top) {
 						
 						
 					</ul>
-					<div id="ErrMsg" class="col-lg-12 col-sm-12" style="color: #fbe336;font-weight: bolder;font-size: 14px;clear: both;">  <?php if(isset($ErrMsg)){echo $ErrMsg;}?></div>
+                                        <div id="ErrMsg" class="col-lg-12 col-sm-12" style="color: #fbe336;font-weight: bolder;font-size: 14px;clear: both;" role="alert" aria-live="assertive">  <?php if(isset($ErrMsg)){echo $ErrMsg;}?></div>
 				</div>
 
 				</form>
