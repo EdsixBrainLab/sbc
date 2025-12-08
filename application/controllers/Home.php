@@ -800,15 +800,16 @@ class Home extends CI_Controller {
 				
 				$GameResult=$this->Dashboard_model->InsertGameData($uid,$SID,$GID,$ResponseTime,$BalaceTime,$CorrectAnswer,$UserAnswer,$AnswerStaus,$QNO,$SCORE,$TimeOverStatus,$puzzle_cycle,$curdate,$curdatetime,$gametime,$pid);
 				
-				if($GameResult[0]['OUTPUT']=='GAMEINSERT')
-				{
-					$arrofGameData=$this->Dashboard_model->UpdateSBCPlayedStatus($uid);
-					if($arrofGameData[0]['Oresult']>0)
-					{
-						$this->session->set_userdata('PlayedStatus','P');
-					}
-					echo 1;exit;
-				}
+                                if($GameResult[0]['OUTPUT']=='GAMEINSERT')
+                                {
+                                        $arrofGameData=$this->Dashboard_model->UpdateSBCPlayedStatus($uid);
+                                        if($arrofGameData[0]['Oresult']>0)
+                                        {
+                                                $this->session->set_userdata('PlayedStatus','P');
+                                        }
+                                        $this->session->unset_userdata('progress_cache');
+                                        echo 1;exit;
+                                }
 				else
 				{
 					echo 'SI';exit;// Closing the popup, 
