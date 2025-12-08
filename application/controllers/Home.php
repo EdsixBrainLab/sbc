@@ -615,11 +615,28 @@ class Home extends CI_Controller {
                 }
 
                 $streakPercent = min(100, $streakCount * 10);
+                $completedSkills = 0;
+                foreach ($skillStats as $stat) {
+                        if ($stat['progress'] >= 50) {
+                                $completedSkills++;
+                        }
+                }
+                if (!isset($data['badges'])) {
+                        $data['badges'] = array();
+                }
                 $data['skillStats'] = $skillStats;
                 $data['streak'] = array(
                         'count' => $streakCount,
                         'percent' => $streakPercent,
                         'circumference' => 339.292
+                );
+                $data['progressPayload'] = array(
+                        'badges' => $data['badges'],
+                        'streakDays' => $streakCount,
+                        'streakTarget' => 5,
+                        'skillsCompleted' => $completedSkills,
+                        'skillTarget' => 3,
+                        'badgeTarget' => 3,
                 );
 
                 $this->load->view('headerinner', $data);

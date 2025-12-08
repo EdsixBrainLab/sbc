@@ -12,6 +12,14 @@ class Progress extends CI_Controller
     public function index()
     {
         $data['badges'] = $this->get_badges();
+        $data['progressPayload'] = [
+            'badges' => $data['badges'],
+            'streakDays' => 7,
+            'streakTarget' => 5,
+            'skillsCompleted' => 2,
+            'skillTarget' => 2,
+            'badgeTarget' => 3,
+        ];
 
         $this->load->view('header');
         $this->load->view('progress', $data);
