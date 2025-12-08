@@ -551,31 +551,86 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 		}
 	}
-	public function mygames_ajax()  
-	{	 
-		if($this->session->userId=="" || !isset($this->session->userId)){redirect('index.php');}
-		if($this->countdowntimer()<=0){  } else { redirect('index.php/home/countdown'); }
+        public function mygames_ajax()
+        {
+                if($this->session->userId=="" || !isset($this->session->userId)){redirect('index.php');}
+                if($this->countdowntimer()<=0){  } else { redirect('index.php/home/countdown'); }
 		
 		$userid = $this->session->userId;
 		$data['userinfo'] = $this->Dashboard_model->Profile($userid);
 		$contestid = $data['userinfo'][0]['User_Contest_Level_ID'];	
 		$gradeid = $data['userinfo'][0]['User_Grade_ID'];
 		$data['GameDetails'] = $this->Dashboard_model->GameAssignLogic($userid,$gradeid,$contestid);
-		/* $data['GameDetails'] = $this->Dashboard_model->GameDetails($gradeid,$userid,$contestid);
-		
-		$data['mem'] = $this->Dashboard_model->SkillScoreMemory($userid,$contestid);
-		$data['vp'] = $this->Dashboard_model->SkillScoreVP($userid,$contestid);
-		$data['fa'] = $this->Dashboard_model->SkillScoreFA($userid,$contestid);
-		$data['ps'] = $this->Dashboard_model->SkillScorePS($userid,$contestid);
-		$data['ling'] = $this->Dashboard_model->SkillScoreLIG($userid,$contestid); */
-			
-		$this->load->view('mygames_ajax', $data); 
-	}
-	
-	public function myprofile()  
-	{	
-		if($this->session->userId=="" || !isset($this->session->userId)){redirect('index.php');}
-		if($this->countdowntimer()<=0){  } else { redirect('index.php/home/countdown'); }
+                /* $data['GameDetails'] = $this->Dashboard_model->GameDetails($gradeid,$userid,$contestid);
+
+                $data['mem'] = $this->Dashboard_model->SkillScoreMemory($userid,$contestid);
+                $data['vp'] = $this->Dashboard_model->SkillScoreVP($userid,$contestid);
+                $data['fa'] = $this->Dashboard_model->SkillScoreFA($userid,$contestid);
+                $data['ps'] = $this->Dashboard_model->SkillScorePS($userid,$contestid);
+                $data['ling'] = $this->Dashboard_model->SkillScoreLIG($userid,$contestid); */
+
+                $this->load->view('mygames_ajax', $data);
+        }
+
+        public function progress()
+        {
+                if($this->session->userId=="" || !isset($this->session->userId)){
+                        redirect('index.php');
+                }
+
+                $this->lang->load('index','english');
+                $userid = $this->session->userId;
+                $data['userinfo'] = $this->Dashboard_model->Profile($userid);
+
+                $contestid = $data['userinfo'][0]['User_Contest_Level_ID'];
+                $gradeid = $data['userinfo'][0]['User_Grade_ID'];
+
+                $gameDetails = $this->Dashboard_model->GameDetails($gradeid, $userid, $contestid);
+                $skillScores = array(
+                        1 => $this->Dashboard_model->SkillScoreMemory($userid, $contestid),
+                        2 => $this->Dashboard_model->SkillScoreVP($userid, $contestid),
+                        3 => $this->Dashboard_model->SkillScoreFA($userid, $contestid),
+                        4 => $this->Dashboard_model->SkillScorePS($userid, $contestid),
+                        5 => $this->Dashboard_model->SkillScoreLIG($userid, $contestid)
+                );
+
+                $skillStats = array();
+                foreach ($gameDetails as $detail) {
+                        $skillId = isset($detail['Skill_ID']) ? (int)$detail['Skill_ID'] : 0;
+                        $attempts = isset($skillScores[$skillId]) ? count($skillScores[$skillId]) : 0;
+                        $progressPercent = min(100, $attempts * 10);
+
+                        $skillStats[] = array(
+                                'id' => $skillId,
+                                'name' => $detail['Skill_Name'],
+                                'description' => $detail['Skill_Description'],
+                                'progress' => $progressPercent,
+                                'attempts' => $attempts
+                        );
+                }
+
+                $streakCount = 0;
+                foreach ($skillScores as $scores) {
+                        $streakCount += count($scores);
+                }
+
+                $streakPercent = min(100, $streakCount * 10);
+                $data['skillStats'] = $skillStats;
+                $data['streak'] = array(
+                        'count' => $streakCount,
+                        'percent' => $streakPercent,
+                        'circumference' => 339.292
+                );
+
+                $this->load->view('headerinner', $data);
+                $this->load->view('progress', $data);
+                $this->load->view('footer');
+        }
+
+        public function myprofile()
+        {
+                if($this->session->userId=="" || !isset($this->session->userId)){redirect('index.php');}
+                if($this->countdowntimer()<=0){  } else { redirect('index.php/home/countdown'); }
 	//	if($this->countdowntimer()<=0){ redirect('index.php/home/mygames'); }else { redirect('index.php/home/countdown'); }
 		
 		$this->load->view('headerinner');

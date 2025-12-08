@@ -28,8 +28,15 @@ $lang['latestnews'] = "Top 2 winner of Tech4 Impact Accelereator Program 2013 co
 $lang['latestnews1'] = "Top 2 winner of Tech4 Impact Accelereator Program 2014 conducted by CIIEIIM Ahmedabad, Village Capital.";
 $lang['latestnews2'] = "Top 2 winner of Tech4 Impact Accelereator Program 2015 conducted by CIIEIIM Ahmedabad, Village Capital.";
 
+$lang['current_streak'] = 'Current streak';
+$lang['days_streak'] = 'day streak';
+$lang['streak_message'] = 'Keep playing to extend your streak!';
+$lang['skill_progress'] = 'Skill progress';
+$lang['attempts_label'] = 'attempts logged';
+$lang['no_progress_yet'] = 'Progress data will appear after you play some games.';
 
 
- 
+
+
 
 ?>
