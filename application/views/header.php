@@ -10,6 +10,7 @@
     <link href="<?php echo base_url(); ?>assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/animate.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/modern-portal.css" rel="stylesheet">
     <!--<link href="css/main.css" rel="stylesheet">-->
         <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/design-system-motion.js"></script>
@@ -33,6 +34,7 @@ if(window==window.top) {
 {?> 
 <link href="<?php echo base_url(); ?>assets/css/newstyle.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>assets/css/design-system.css" rel="stylesheet">
+<link href="<?php echo base_url(); ?>assets/css/modern-portal.css" rel="stylesheet">
 <header id="header">
 	<div class="container">
 	<div style="display:none;" id="iddivLoading" class="loading">Loading&#8230;</div>
@@ -74,6 +76,7 @@ if(window==window.top) {
 </header>
 <?php }  else{	?>
 <link href="<?php echo base_url(); ?>assets/css/newstyle.css" rel="stylesheet">
+<link href="<?php echo base_url(); ?>assets/css/modern-portal.css" rel="stylesheet">
 <header id="header">
 	<div class="container">
 		<div class="col-md-3 col-sm-12 col-xs-12 text-center">

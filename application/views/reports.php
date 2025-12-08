@@ -915,81 +915,84 @@ $LICorrectQuestions=$LICorrectQuestions;
 <div class="container">
 <!--MY Report starts here-->
 <div class="MyReportsPager pageHomePagerHide Dashboardhide mygameshide  myprofilehide">
- <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Skill Performance</h1>
-<?php //if($isexpired['conteststatus']==0){ ?>
-					<!--<a id="downloadreport" class="reportcard" style="float:right; background: chartreuse; color: black; padding: 8px; position: absolute; text-decoration: none; font-size:18px;" href="./UserAchievementImage.php" download="<?php echo $Name ?>.png">
-                       Download Report Card
-                    </a>
-					
-					<a id="downloadreport" class="certification" style="float:right; background: coral; color: black; padding: 8px; text-decoration: none; font-size:18px;" href="./UserCertificationImage.php" download="<?php echo $Name ?>.png">
-                        Download Participation Certificate
-                    </a>-->
-					
-					<?php //} ?>
-
+        <div class="portal-shell">
+            <div class="portal-hero" style="margin-bottom:18px;">
+                <div>
+                    <div class="portal-hero__eyebrow">Report</div>
+                    <h1>Skill Performance</h1>
+                    <p>Your latest SkillAngels breakdown across all abilities.</p>
                 </div>
-
-				<div class="col-lg-3 page-header" style="width: auto;">
-					
-                </div>
-            </div>
-            <div class="row">
-        		<div class="col-lg-6">
-                	<h3>Skill Scores</h3>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="reportChartContainer1">
-                            <div class="cb">
-                            	<p class="skillName pt0">Memory</p>
-                                	
-                            	<div class="meter mt10">
-                                	<span class="redColor" style="width:<?php if($MemoryTotalScore<=5){ echo '5'; } else { echo $MemoryTotalScore; } ?>%"><?php echo $MemoryTotalScore; ?></span>
-								</div>
-                            </div>
-                            
-                            <div class="cb">
-                            	<p class="skillName">Visual Processing</p>
-                            	<div class="meter mt10">
-  									<span class="yellowColor" style="width:<?php if($VisualProcessingTotalScore<=5){ echo '5'; } else { echo $VisualProcessingTotalScore; } ?>%"><?php echo $VisualProcessingTotalScore; ?></span>
-								</div>
-                            </div>
-                            
-                            <div class="cb">
-                            	<p class="skillName">Focus and Attention</p>
-                            	<div class="meter mt10">
-  									<span class="greenColor" style="width:<?php if($FocusandAttentionTotalScore<=5){ echo '5'; } else { echo $FocusandAttentionTotalScore; } ?>%"><?php echo $FocusandAttentionTotalScore; ?></span>
-								</div>
-                            </div>
-                            
-                            <div class="cb">
-                            	<p class="skillName">Problem Solving</p>
-                            	<div class="meter mt10">
-  									<span class="orangeColor" style="width:<?php if($ProblemSolvingTotalScore<=5){ echo '5'; } else { echo $ProblemSolvingTotalScore; } ?>%"><?php echo $ProblemSolvingTotalScore; ?></span>
-								</div>
-                            </div>
-                            
-                            <div class="cb">
-                            	<p class="skillName">Linguistics</p>
-                            		<div class="meter mt10">
-  										<span class="blueColor" style="width:<?php if($LinguisticsTotalScore<=5){ echo '5'; } else { echo $LinguisticsTotalScore; } ?>%"><?php echo $LinguisticsTotalScore; ?></span>
-									</div>
-                            </div>
-                            </div>
-                        </div>
+                <div class="portal-hero__pill">
+                    <span class="fa fa-star" aria-hidden="true"></span>
+                    <div>
+                        <strong>Brain Skill Power Index</strong><br>
+                        <small><?php echo $AverageScore; ?> points</small>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                	<h3><a style="top:-5px;position:relative;" href="javascript:;" data-toggle="tooltip" data-placement="top" data-html="true" title='<div class=""><span style="font-size:12px;">Your BSPI score reflects <br/>the average score<br/> of the five cognitive skills.</span></div>'><i  style="color:#1f7096; font-size:16px;" class="fa fa-info-circle"></i></a> Brain Skill Power Index: &nbsp; <b><?php echo $AverageScore ?> </b></h3>
-                    <div class="panel panel-default">
-                        <div class="panel-body reportChartContainer">
+            </div>
+            <div class="metric-grid" style="margin-bottom:16px;">
+                <div class="metric-tile">
+                    <small>Games attempted</small>
+                    <strong><?php echo $MAttemptedQuestions + $VPAttemptedQuestions + $FAAttemptedQuestions + $PSAttemptedQuestions + $LIAttemptedQuestions; ?></strong>
+                </div>
+                <div class="metric-tile">
+                    <small>Skills measured</small>
+                    <strong>5</strong>
+                </div>
+                <div class="metric-tile">
+                    <small>Brain Skill Power Index</small>
+                    <strong><?php echo $AverageScore; ?></strong>
+                </div>
+            </div>
+            <div class="report-layout">
+                <div class="card-surface">
+                    <h3>Skill Scores</h3>
+                    <div class="skill-score-row">
+                        <span class="label">Memory</span>
+                        <span class="value-pill"><?php echo $MemoryTotalScore; ?>%</span>
+                    </div>
+                    <div class="progress-bar-modern"><span style="width:<?php if($MemoryTotalScore<=5){ echo '5'; } else { echo $MemoryTotalScore; } ?>%"></span></div>
+
+                    <div class="skill-score-row">
+                        <span class="label">Visual Processing</span>
+                        <span class="value-pill"><?php echo $VisualProcessingTotalScore; ?>%</span>
+                    </div>
+                    <div class="progress-bar-modern"><span style="width:<?php if($VisualProcessingTotalScore<=5){ echo '5'; } else { echo $VisualProcessingTotalScore; } ?>%"></span></div>
+
+                    <div class="skill-score-row">
+                        <span class="label">Focus and Attention</span>
+                        <span class="value-pill"><?php echo $FocusandAttentionTotalScore; ?>%</span>
+                    </div>
+                    <div class="progress-bar-modern"><span style="width:<?php if($FocusandAttentionTotalScore<=5){ echo '5'; } else { echo $FocusandAttentionTotalScore; } ?>%"></span></div>
+
+                    <div class="skill-score-row">
+                        <span class="label">Problem Solving</span>
+                        <span class="value-pill"><?php echo $ProblemSolvingTotalScore; ?>%</span>
+                    </div>
+                    <div class="progress-bar-modern"><span style="width:<?php if($ProblemSolvingTotalScore<=5){ echo '5'; } else { echo $ProblemSolvingTotalScore; } ?>%"></span></div>
+
+                    <div class="skill-score-row">
+                        <span class="label">Linguistics</span>
+                        <span class="value-pill"><?php echo $LinguisticsTotalScore; ?>%</span>
+                    </div>
+                    <div class="progress-bar-modern"><span style="width:<?php if($LinguisticsTotalScore<=5){ echo '5'; } else { echo $LinguisticsTotalScore; } ?>%"></span></div>
+                </div>
+                <div class="card-surface">
+                    <h3 style="display:flex;align-items:center;gap:8px;">
+                        <a style="top:-3px;position:relative;" href="javascript:;" data-toggle="tooltip" data-placement="top" data-html="true" title='<div class=""><span style="font-size:12px;">Your BSPI score reflects <br/>the average score<br/> of the five cognitive skills.</span></div>'><i  style="color:#1f7096; font-size:16px;" class="fa fa-info-circle"></i></a>
+                        Brain Skill Power Index
+                    </h3>
+                    <div class="progress-bar-modern" aria-label="Brain Skill Power Index" style="margin-bottom:14px;">
+                        <span style="width:<?php echo $AverageScore; ?>%;"></span>
+                    </div>
+                    <div class="panel panel-default" style="border:0;box-shadow:none;">
+                        <div class="panel-body reportChartContainer" style="padding:0;">
                             <div id="chart-container"></div>
                         </div>
                     </div>
                 </div>
- 			</div>
-	</div>
+            </div>
+        </div>
 <!--my report ends here-->
 
 <!-- skill performance starts here -->
