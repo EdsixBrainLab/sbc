@@ -9,7 +9,7 @@
 </ul>
 <div class="socialmedia">
 <span>Follow us on</span>
-<a href="https://www.facebook.com/skillangels" target="_blank"><img src="<?php echo base_url(); ?>assets/images/fb.png" width="33" height="33"></a> <a href="https://www.linkedin.com/company/edsix-brain-lab-pvt-ltd?trk=company_logo" target="_blank"><img src="<?php echo base_url(); ?>assets/images/icon_LinkedIn.png" width="33" height="33"></a>
+<a href="https://www.facebook.com/skillangels" target="_blank" aria-label="Visit SkillAngels on Facebook"><img src="<?php echo base_url(); ?>assets/images/fb.png" width="33" height="33" alt="Facebook"></a> <a href="https://www.linkedin.com/company/edsix-brain-lab-pvt-ltd?trk=company_logo" target="_blank" aria-label="Visit SkillAngels on LinkedIn"><img src="<?php echo base_url(); ?>assets/images/icon_LinkedIn.png" width="33" height="33" alt="LinkedIn"></a>
 </div></div>
 
 <div class="col-md-4 col-sm-6">
@@ -152,7 +152,7 @@ function checkuserisactive()
 			}
 		});
 }
-</script><!-- Cookie Alert----><link href="<?php echo base_url(); ?>assets/css/cookiealert/cookiealert.css" rel="stylesheet" type="text/css" /><!-- START Bootstrap-Cookie-Alert --><div class="alert text-center cookiealert" role="alert"><b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="<?php echo base_url(); ?>index.php/home/privacypolicy#cookie" target="_blank" >Learn more</a><button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">        I agree</button></div><script src="<?php echo base_url(); ?>assets/js/cookiealert/cookiealert.js"></script>
+</script><!-- Cookie Alert----><link href="<?php echo base_url(); ?>assets/css/cookiealert/cookiealert.css" rel="stylesheet" type="text/css" /><!-- START Bootstrap-Cookie-Alert --><div class="alert text-center cookiealert" role="alert"><b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="<?php echo base_url(); ?>index.php/home/privacypolicy#cookie" target="_blank" >Learn more</a><button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Accept cookies">        I agree</button></div><script src="<?php echo base_url(); ?>assets/js/cookiealert/cookiealert.js"></script>
 </body>
 </html>
 

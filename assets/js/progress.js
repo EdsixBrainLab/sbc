@@ -106,19 +106,57 @@
         var modals = document.querySelectorAll('.ds-modal');
         var lastTrigger;
 
+        function getFocusableElements(modal) {
+            return Array.prototype.slice.call(modal.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])')).filter(function (element) {
+                return element.offsetParent !== null;
+            });
+        }
+
+        function trapFocus(event, modal) {
+            if (event.key !== 'Tab') return;
+            var focusable = getFocusableElements(modal);
+            if (!focusable.length) return;
+
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+
         function openModal(modal, trigger) {
             modal.classList.add('is-open');
             modal.setAttribute('aria-hidden', 'false');
-            lastTrigger = trigger || lastTrigger;
-            var focusTarget = modal.querySelector('[data-modal-close]') || modal.querySelector('button, [href], input, select, textarea');
-            if (focusTarget) {
+            modal.setAttribute('role', 'dialog');
+            modal.setAttribute('aria-modal', 'true');
+            lastTrigger = trigger || document.activeElement || lastTrigger;
+            var dialog = modal.querySelector('.ds-modal__dialog');
+            if (dialog && !dialog.hasAttribute('tabindex')) {
+                dialog.setAttribute('tabindex', '-1');
+            }
+
+            var focusable = getFocusableElements(modal);
+            var focusTarget = focusable[0] || dialog || modal;
+            if (focusTarget && typeof focusTarget.focus === 'function') {
                 focusTarget.focus();
             }
+
+            modal.__focusTrapHandler = function (event) { trapFocus(event, modal); };
+            modal.addEventListener('keydown', modal.__focusTrapHandler);
         }
 
         function closeModal(modal) {
             modal.classList.remove('is-open');
             modal.setAttribute('aria-hidden', 'true');
+            if (modal.__focusTrapHandler) {
+                modal.removeEventListener('keydown', modal.__focusTrapHandler);
+                modal.__focusTrapHandler = null;
+            }
             if (lastTrigger && typeof lastTrigger.focus === 'function') {
                 lastTrigger.focus();
             }

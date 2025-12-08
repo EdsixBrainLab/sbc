@@ -59,12 +59,13 @@ date_default_timezone_set('Asia/Kolkata');
                 <p class="eyebrow">Stay updated</p>
                 <h3>What's New</h3>
             </div>
-            <div class="whats-new-actions" aria-hidden="true">
-                <button class="scroll-btn" data-direction="prev" type="button" title="Previous update"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-                <button class="scroll-btn" data-direction="next" type="button" title="Next update"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+            <div class="whats-new-actions">
+                <button class="scroll-btn" data-direction="prev" type="button" aria-label="Show previous update" title="Previous update"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="scroll-btn" data-direction="next" type="button" aria-label="Show next update" title="Next update"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
             </div>
         </div>
         <div class="whats-new-carousel" role="region" aria-label="Latest updates">
+            <div class="sr-only" id="whats-new-live" aria-live="polite"></div>
             <div class="carousel-track">
                 <article class="carousel-card">
                     <p class="eyebrow">Feature</p>
@@ -431,21 +432,55 @@ date_default_timezone_set('Asia/Kolkata');
             align-self: flex-end;
         }
     }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
 </style>
 
 <script>
     (function() {
         const track = document.querySelector('.carousel-track');
         const buttons = document.querySelectorAll('.scroll-btn');
-        if (!track || !buttons.length) return;
+        const liveRegion = document.getElementById('whats-new-live');
+        const cards = track ? Array.from(track.querySelectorAll('.carousel-card')) : [];
+        let currentIndex = 0;
+
+        function announceCard(index) {
+            if (!liveRegion || !cards.length) return;
+            const card = cards[index];
+            if (!card) return;
+            const eyebrow = card.querySelector('.eyebrow');
+            const title = card.querySelector('h4');
+            const prefix = eyebrow ? eyebrow.textContent.trim() + ': ' : '';
+            liveRegion.textContent = prefix + (title ? title.textContent.trim() : 'Update');
+        }
+
+        if (!track || !buttons.length || !cards.length) return;
+
+        announceCard(currentIndex);
+
         buttons.forEach((btn) => {
             btn.addEventListener('click', () => {
                 const direction = btn.getAttribute('data-direction');
-                const scrollAmount = track.clientWidth * 0.8;
-                track.scrollBy({
-                    left: direction === 'next' ? scrollAmount : -scrollAmount,
-                    behavior: 'smooth'
-                });
+                currentIndex = direction === 'next'
+                    ? (currentIndex + 1) % cards.length
+                    : (currentIndex - 1 + cards.length) % cards.length;
+
+                const targetCard = cards[currentIndex];
+                if (targetCard && typeof targetCard.scrollIntoView === 'function') {
+                    targetCard.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+                }
+
+                announceCard(currentIndex);
             });
         });
     })();
