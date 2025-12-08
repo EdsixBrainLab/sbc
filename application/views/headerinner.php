@@ -38,6 +38,7 @@ $countdowntime=$time_one->getTimestamp() - $time_two->getTimestamp();
 <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.0.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/skillpiecharts.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/skillpiecharts-more.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/design-system-motion.js"></script>
 
 <!--FULL SCREEN-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/fancy/jquery.fancybox.css" media="screen">
