@@ -391,3 +391,176 @@ h3{text-align:center;color:#000;font-weight:800;}
 {
  .style_prevu_kit{-webkit-transform:scale(1) !important;transform:scale(1) !important;}
 }
+/* Progress badges layout */
+.progress-hero {
+    background: linear-gradient(135deg, #1a73e8, #6f9fff);
+    color: #fff;
+    padding: 40px 0 30px;
+}
+
+.progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.progress-header .eyebrow {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.progress-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+.progress-header .subtitle {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.badge-legend {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.badge-legend .legend {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.badge-legend .legend.earned {
+    background: #34d399;
+}
+
+.badge-legend .legend.locked {
+    background: #cbd5e0;
+}
+
+.badge-section {
+    padding: 32px 0 48px;
+    background: #f5f7fb;
+}
+
+.badge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.badge-card {
+    position: relative;
+    border: none;
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: left;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.badge-card .badge-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: #eef2ff;
+    display: grid;
+    place-items: center;
+    color: #1a73e8;
+    font-size: 26px;
+}
+
+.badge-card .badge-content {
+    flex: 1;
+}
+
+.badge-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.badge-status {
+    margin: 4px 0 0;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.badge-card:hover,
+.badge-card:focus-visible {
+    outline: none;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(26, 115, 232, 0.12);
+}
+
+.badge-card.locked {
+    filter: grayscale(0.9);
+    background: #f8fafc;
+}
+
+.badge-card.locked .badge-icon {
+    background: #e5e7eb;
+    color: #6b7280;
+}
+
+.badge-lock {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    color: #6b7280;
+    opacity: 0.9;
+}
+
+.badge-card[data-tooltip]:hover::after,
+.badge-card[data-tooltip]:focus-visible::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -10px;
+    transform: translateY(100%);
+    background: #0f172a;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.badge-card[data-tooltip]:hover::before,
+.badge-card[data-tooltip]:focus-visible::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    bottom: 0;
+    transform: translateY(100%);
+    border-width: 8px 8px 0 8px;
+    border-style: solid;
+    border-color: #0f172a transparent transparent transparent;
+    z-index: 2;
+}
+
+@media (max-width: 600px) {
+    .progress-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .badge-card {
+        padding: 16px;
+    }
+}
