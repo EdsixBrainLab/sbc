@@ -64,22 +64,62 @@ $bordercolor=array("1"=>"#f00","2"=>"#ffc000","3"=>"#92d050","4"=>"#ff6600","5"=
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	fancyCall();MyGames();
+        renderGameSkeletons();
+        fancyCall();
+        MyGames();
 });
+
+function renderGameSkeletons()
+{
+        var skeletonCards = '';
+        for(var i = 0; i < 3; i++)
+        {
+                skeletonCards += '<article class="ds-skeleton-card" aria-hidden="true">'
+                        + '<div class="ds-skeleton ds-skeleton-avatar"></div>'
+                        + '<div class="ds-skeleton-lines">'
+                        + '<span class="ds-skeleton ds-skeleton-line ds-skeleton-line--title"></span>'
+                        + '<span class="ds-skeleton ds-skeleton-line"></span>'
+                        + '<span class="ds-skeleton ds-skeleton-line ds-skeleton-line--badge"></span>'
+                        + '</div>'
+                        + '</article>';
+        }
+
+        $('#ajaxcontent').html('<div class="ds-skeleton-grid">' + skeletonCards + '</div>');
+}
+
+function verifySkeletonCleared()
+{
+        var container = $('#ajaxcontent');
+        if(container.find('.ds-skeleton-grid').length && $.trim(container.text()).length > 0)
+        {
+                container.find('.ds-skeleton-grid').remove();
+        }
+}
+
 function MyGames()
-{$('#loadingimage').show();
-	$.ajax({
-		type: "POST", 
-		url: "<?php echo base_url(); ?>index.php/home/mygames_ajax",
-		data: {},
-		success: function(result)
-		{ //alert(result);
-			 $('#loadingimage').hide();
-			 $('#ajaxcontent').html(result);
-			  fancyCall();
-		}
-	}); 
-	
+{
+        $('#loadingimage').show();
+        renderGameSkeletons();
+        $.ajax({
+                type: "POST",
+                url: "<?php echo base_url(); ?>index.php/home/mygames_ajax",
+                data: {},
+                success: function(result)
+                { //alert(result);
+                         $('#ajaxcontent').html(result);
+                          fancyCall();
+                },
+                error: function()
+                {
+                        $('#ajaxcontent').html('<p class="text-danger">Unable to load games right now.</p>');
+                },
+                complete: function()
+                {
+                         $('#loadingimage').hide();
+                         verifySkeletonCleared();
+                }
+        });
+
 }
 function fancyCall()
 {

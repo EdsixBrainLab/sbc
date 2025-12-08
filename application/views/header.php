@@ -11,7 +11,8 @@
     <link href="<?php echo base_url(); ?>assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/animate.min.css" rel="stylesheet">
     <!--<link href="css/main.css" rel="stylesheet">-->
-	<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/design-system-motion.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>

@@ -11,6 +11,7 @@
   --color-success: #1b8755;
   --color-danger: #b42318;
   --color-focus: #134b9e;
+  --ease-emphasis: cubic-bezier(0.33, 1, 0.68, 1);
 
   --gradient-primary: linear-gradient(135deg, #0f4c81, #1b68b3);
   --gradient-secondary: linear-gradient(135deg, #f7b801, #f18700);
@@ -39,6 +40,45 @@
   --duration-slow: 320ms;
 }
 
+@keyframes ds-press {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  45% {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ds-card-hover {
+  0% {
+    transform: translateY(0);
+    box-shadow: var(--shadow-soft);
+  }
+
+  100% {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+  }
+}
+
+@keyframes ds-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-strong);
@@ -50,7 +90,10 @@ body {
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   box-shadow: var(--shadow-soft);
-  transition: transform var(--duration-normal) ease, box-shadow var(--duration-normal) ease, border-color var(--duration-normal) ease;
+  transition: transform var(--duration-normal) var(--ease-emphasis),
+    box-shadow var(--duration-normal) var(--ease-emphasis),
+    border-color var(--duration-normal) var(--ease-emphasis);
+  will-change: transform, box-shadow;
 }
 
 .ds-card:hover,
@@ -58,6 +101,11 @@ body {
   transform: translateY(-2px);
   box-shadow: var(--shadow-strong);
   border-color: var(--color-primary);
+}
+
+.ds-card.is-hovered,
+.ds-badge-card.is-hovered {
+  animation: ds-card-hover var(--duration-slow) var(--ease-emphasis) forwards;
 }
 
 .ds-card--muted {
@@ -77,8 +125,11 @@ body {
   background: var(--gradient-primary);
   cursor: pointer;
   text-decoration: none;
-  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease, border-color var(--duration-fast) ease;
+  transition: transform var(--duration-fast) var(--ease-emphasis),
+    box-shadow var(--duration-fast) var(--ease-emphasis),
+    border-color var(--duration-fast) var(--ease-emphasis);
   box-shadow: var(--shadow-soft);
+  will-change: transform, box-shadow;
 }
 
 .ds-button:hover,
@@ -104,6 +155,11 @@ body {
   border-color: var(--color-primary);
 }
 
+.ds-button.is-pressed,
+.ds-badge-card.is-pressed {
+  animation: ds-press var(--duration-normal) var(--ease-emphasis);
+}
+
 .ds-badge-card {
   position: relative;
   display: flex;
@@ -117,7 +173,8 @@ body {
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   box-shadow: var(--shadow-soft);
-  transition: transform var(--duration-normal) ease, box-shadow var(--duration-normal) ease;
+  transition: transform var(--duration-normal) var(--ease-emphasis),
+    box-shadow var(--duration-normal) var(--ease-emphasis);
 }
 
 .ds-badge-card:hover,
@@ -197,6 +254,78 @@ body {
   font-size: 14px;
   box-shadow: var(--shadow-soft);
   z-index: 2;
+}
+
+.ds-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-muted) 25%,
+    #e8edf5 37%,
+    var(--color-surface-muted) 63%
+  );
+  background-size: 200% 100%;
+  animation: ds-shimmer var(--duration-slow) linear infinite;
+  border-radius: var(--radius-sm);
+}
+
+.ds-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.ds-skeleton-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.ds-skeleton-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.ds-skeleton-lines {
+  flex: 1;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.ds-skeleton-line {
+  height: 12px;
+}
+
+.ds-skeleton-line--title {
+  width: 70%;
+  height: 16px;
+}
+
+.ds-skeleton-line--badge {
+  width: 40%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-button,
+  .ds-card,
+  .ds-badge-card {
+    transition-duration: 0ms;
+  }
+
+  .ds-button.is-pressed,
+  .ds-badge-card.is-pressed,
+  .ds-card.is-hovered,
+  .ds-badge-card.is-hovered,
+  .ds-skeleton {
+    animation: none;
+  }
 }
 
 .ds-progress {
