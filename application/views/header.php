@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php header("Access-Control-Allow-Origin: *"); ?>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -11,13 +11,12 @@
     <link href="<?php echo base_url(); ?>assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/animate.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/modern-portal.css" rel="stylesheet">
-    <!--<link href="css/main.css" rel="stylesheet">-->
         <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/design-system-motion.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
 <script  type="text/javascript">
 if(window==window.top) {
     // not in an iframe
@@ -26,75 +25,61 @@ if(window==window.top) {
 </script>
 </head><!--/head-->
 <body>
-<?php
-//echo "<pre>";print_r($_SESSION['name']);exit;
-
-?>
-<?php if(!isset($this->session->userId))
-{?> 
+<?php if(!isset($this->session->userId)) { ?>
 <link href="<?php echo base_url(); ?>assets/css/newstyle.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>assets/css/design-system.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>assets/css/modern-portal.css" rel="stylesheet">
-<header id="header">
-	<div class="container">
-	<div style="display:none;" id="iddivLoading" class="loading">Loading&#8230;</div>
-		<div class="col-md-5 col-sm-12 col-xs-12 text-center">
-                  <div class="logo" ><a  title="SkillAngels" href="<?php echo base_url();?>index.php"><img src="<?php echo base_url(); ?>assets/images/skillangels_logo.png" alt="SkillAngels" width="210" height="72" loading="lazy"/><!--<img src="images/SUPER_BRAIN_OLYMPIAD.png" alt="G-TEC Gensmart Academy" width="100"/>--></a></div>
-		</div>
-		<!--<div class="col-md-3 col-sm-12 col-xs-12 puzzle-model">
-		</div>-->
-		<div class="col-md-7 col-sm-12 col-xs-12 login-btn">
-			<div class="container">
-                        <form class="form-horizontal"  role="form" method="post" id="form-login" aria-label="Login form">
-                                <div class="form-group" >
-                                        <ul class="nav navbar-nav">
-                                                <li class="">
-                                                        <label class="sr-only" for="User_ID">User name</label>
-                                                        <input type="text" class="form-control" name="user_name" id="User_ID" placeholder="Enter User Name" autocomplete="username" required aria-required="true" aria-describedby="ErrMsg">
-                                                </li>
-                                                <li class="">
-                                                <label class="sr-only" for="User_PWD">Password</label>
-                                                <input type="password" class="form-control" name="User_PWD" id="User_PWD" placeholder="Enter password" autocomplete="current-password" required aria-required="true" aria-describedby="ErrMsg">
-                                                </li>
-                                                <li class="">
-                                                        <input type="button" id="submit" class="form-control loginLink" value="Login" aria-label="Submit login form">
-                                                </li>
-						
-							<!--<input type="button" id="" class="form-control loginLink" value="Register">-->
-						<!-- <a href="<?php echo base_url(); ?>index.php/home/registration" id="" class="btn btn-success loginLink">Register</a>  -->
-						
-						
-					</ul>
-                                        <div id="ErrMsg" class="col-lg-12 col-sm-12" style="color: #cc0000;font-weight: 700;font-size: 14px;clear: both;" role="alert" aria-live="assertive">  <?php if(isset($ErrMsg)){echo $ErrMsg;}?></div>
-				</div>
-
-				</form>
-			</div>
-		</div>
-		<!-- <marquee style="color:chartreuse; font-size:20px; font-weight:bold;" onmouseover="this.stop();" onmouseout="this.start();">For all users who have not taken up the contest, another opportunity beckons. Login to the portal today (12-Nov-2017) after 8 am and choose any 1 hour slot between 9 am and 9 pm to be played on 12-Nov-2017.Please use the latest browsers. Also clear your cache on your devices before logging in.</marquee> -->
-	</div>
+<header id="header" class="portal-header">
+        <div class="container">
+            <div class="portal-nav">
+                <div class="portal-brand">
+                    <a title="SkillAngels" href="<?php echo base_url();?>index.php">
+                        <img src="<?php echo base_url(); ?>assets/images/skillangels_logo.png" alt="SkillAngels" loading="lazy" />
+                    </a>
+                    <p class="portal-greeting">India's Largest Online Brain Skill Contest</p>
+                </div>
+                <div class="nav-actions">
+                    <a class="nav-link-pill secondary" href="#whats-new"><i class="fa fa-magic"></i> What's new</a>
+                    <a class="nav-link-pill primary" href="javascript:;"><i class="fa fa-gamepad"></i> Play hub</a>
+                </div>
+            </div>
+            <div style="display:none;" id="iddivLoading" class="loading">Loading&#8230;</div>
+            <form class="portal-login-card" role="form" method="post" id="form-login" aria-label="Login form">
+                <div>
+                    <label for="User_ID">User name</label>
+                    <input type="text" class="form-control" name="user_name" id="User_ID" placeholder="Enter User Name" autocomplete="username" required aria-required="true" aria-describedby="ErrMsg">
+                </div>
+                <div>
+                    <label for="User_PWD">Password</label>
+                    <input type="password" class="form-control" name="User_PWD" id="User_PWD" placeholder="Enter password" autocomplete="current-password" required aria-required="true" aria-describedby="ErrMsg">
+                </div>
+                <div>
+                    <label class="sr-only" for="submit">Login</label>
+                    <input type="button" id="submit" class="form-control loginLink" value="Login" aria-label="Submit login form">
+                </div>
+                <div id="ErrMsg" class="col-lg-12 col-sm-12" style="color: #cc0000;font-weight: 700;font-size: 14px;clear: both;" role="alert" aria-live="assertive">  <?php if(isset($ErrMsg)){echo $ErrMsg;}?></div>
+            </form>
+        </div>
 </header>
-<?php }  else{	?>
+<?php } else { ?>
 <link href="<?php echo base_url(); ?>assets/css/newstyle.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>assets/css/modern-portal.css" rel="stylesheet">
-<header id="header">
-	<div class="container">
-		<div class="col-md-3 col-sm-12 col-xs-12 text-center">
-                  <div class="logo" ><a  title="SkillAngels" href="javascript:;"><img src="<?php echo base_url(); ?>assets/images/skillangels_logo.png" alt="SkillAngels" width="210" height="72" loading="lazy"/><!--<img src="images/SUPER_BRAIN_OLYMPIAD.png" alt="G-TEC Gensmart Academy" width="100"/>--></a></div>
-		</div>
-		<div class="col-md-6 col-sm-6 col-xs-12 padtop" >
-			<h3>Welcome <span style="color:#ff5c5d"><?php echo $this->session->name; ?></span></h3>
-		</div>
-		<div class="col-md-3 col-sm-12 col-xs-12 login-btn">
-			<nav class="navbar1">
-			<div class="navbar-collapse" id="primary-menu">
-			  <ul class="nav navbar-nav">
-				<li><a href="<?php echo base_url(); ?>index.php/home/myprofile" class="loginLink">Profile</a></li>
-				</ul>
-			</div>
-		  </nav>
-		</div>
- </div>
+<header id="header" class="portal-header">
+        <div class="container">
+            <div class="portal-nav">
+                <div class="portal-brand">
+                    <a title="SkillAngels" href="javascript:;">
+                        <img src="<?php echo base_url(); ?>assets/images/skillangels_logo.png" alt="SkillAngels" loading="lazy" />
+                    </a>
+                    <p class="portal-greeting">Welcome back, <span style="color:#ff5c5d"><?php echo $this->session->name; ?></span></p>
+                </div>
+                <div class="nav-actions">
+                    <a class="nav-link-pill secondary" href="<?php echo base_url(); ?>index.php/home/mygames"><i class="fa fa-rocket"></i> My Games</a>
+                    <a class="nav-link-pill" href="<?php echo base_url(); ?>index.php/home/reports"><i class="fa fa-bar-chart"></i> Reports</a>
+                    <a class="nav-link-pill primary" href="<?php echo base_url(); ?>index.php/home/myprofile"><i class="fa fa-user"></i> Profile</a>
+                </div>
+            </div>
+        </div>
 </header>
 <?php } ?>
 

@@ -915,7 +915,7 @@ $LICorrectQuestions=$LICorrectQuestions;
 <div class="container">
 <!--MY Report starts here-->
 <div class="MyReportsPager pageHomePagerHide Dashboardhide mygameshide  myprofilehide">
-        <div class="portal-shell">
+            <div class="portal-shell">
             <div class="portal-hero" style="margin-bottom:18px;">
                 <div>
                     <div class="portal-hero__eyebrow">Report</div>
@@ -930,22 +930,25 @@ $LICorrectQuestions=$LICorrectQuestions;
                     </div>
                 </div>
             </div>
-            <div class="metric-grid" style="margin-bottom:16px;">
-                <div class="metric-tile">
+            <div class="report-spotlight">
+                <div class="report-tile">
                     <small>Games attempted</small>
                     <strong><?php echo $MAttemptedQuestions + $VPAttemptedQuestions + $FAAttemptedQuestions + $PSAttemptedQuestions + $LIAttemptedQuestions; ?></strong>
+                    <p class="subtitle">Keep playing to unlock more insights.</p>
                 </div>
-                <div class="metric-tile">
+                <div class="report-tile">
                     <small>Skills measured</small>
-                    <strong>5</strong>
+                    <strong>5 skills</strong>
+                    <p class="subtitle">Memory, Visual, Focus, Problem Solving, Linguistics.</p>
                 </div>
-                <div class="metric-tile">
+                <div class="report-tile">
                     <small>Brain Skill Power Index</small>
                     <strong><?php echo $AverageScore; ?></strong>
+                    <p class="subtitle">Average of all your skill scores.</p>
                 </div>
             </div>
             <div class="report-layout">
-                <div class="card-surface">
+                <div class="report-card">
                     <h3>Skill Scores</h3>
                     <div class="skill-score-row">
                         <span class="label">Memory</span>
@@ -977,7 +980,7 @@ $LICorrectQuestions=$LICorrectQuestions;
                     </div>
                     <div class="progress-bar-modern"><span style="width:<?php if($LinguisticsTotalScore<=5){ echo '5'; } else { echo $LinguisticsTotalScore; } ?>%"></span></div>
                 </div>
-                <div class="card-surface">
+                <div class="report-card">
                     <h3 style="display:flex;align-items:center;gap:8px;">
                         <a style="top:-3px;position:relative;" href="javascript:;" data-toggle="tooltip" data-placement="top" data-html="true" title='<div class=""><span style="font-size:12px;">Your BSPI score reflects <br/>the average score<br/> of the five cognitive skills.</span></div>'><i  style="color:#1f7096; font-size:16px;" class="fa fa-info-circle"></i></a>
                         Brain Skill Power Index

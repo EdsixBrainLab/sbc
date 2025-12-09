@@ -20,6 +20,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="portal-stat-grid">
+                    <div class="portal-stat-card">
+                        <small>School</small>
+                        <strong><?php echo $this->session->schoolname; ?></strong>
+                        <p class="subtitle">Where your quests begin.</p>
+                    </div>
+                    <div class="portal-stat-card">
+                        <small>Class</small>
+                        <strong><?php echo $class; ?></strong>
+                        <p class="subtitle">Stay tuned for class challenges.</p>
+                    </div>
+                    <div class="portal-stat-card">
+                        <small>Progress</small>
+                        <strong>Leveling up</strong>
+                        <p class="subtitle">Play daily to unlock more badges.</p>
+                    </div>
+                </div>
                 <div class="profile-card">
                     <img src="<?php echo base_url(); ?>assets/images/Parrot_logo_wink2.png" width="150" height="150" class="img-circle" alt="Profile avatar">
                     <div>
@@ -30,8 +47,8 @@
                                 }
                         ?>
                         <ul class="profile-meta">
-                            <li><label>School</label><?php echo $this->session->schoolname; ?></li>
-                            <li><label>Class</label><?php echo $class; ?></li>
+                            <li><label>School</label><strong><?php echo $this->session->schoolname; ?></strong></li>
+                            <li><label>Class</label><strong><?php echo $class; ?></strong></li>
                         </ul>
                     </div>
                 </div>

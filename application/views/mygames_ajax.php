@@ -33,6 +33,13 @@ $contestStatusNote = $contestActive ? 'Your challenges are live and ready to pla
         <div class="page-header1" aria-live="polite" style="margin-top:12px;">Contest has expired</div>
         <?php } ?>
 
+        <div class="games-toolbar">
+            <div>
+                <p class="subtitle">Choose any game tile to start. Keep an eye on your stars and progress meter.</p>
+            </div>
+            <a href="<?php echo base_url(); ?>index.php/home/reports" class="nav-link-pill secondary" aria-label="Open my reports"><i class="fa fa-bar-chart"></i> View my reports</a>
+        </div>
+
         <div class="contentbox">
         <?php if (!empty($GameDetails)): ?>
             <div class="gameboard-grid">
